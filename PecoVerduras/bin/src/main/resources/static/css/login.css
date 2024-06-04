@@ -1,0 +1,143 @@
+
+.gerardContenedorLogin{
+	 height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:url(/css/imagenes/Varias/FondoLogin.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    font-family: var(--letra-tipo-descripcion);
+    font-size:var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+}
+
+.gerardLogin{
+	padding: 90px 72px;
+	box-shadow:var(--sombra-inputs);
+	border-radius:30px;
+	background-color:  rgb(255 255 255 / 38%);
+	text-align:center;
+	width:435px;
+	margin:0 16px;
+}
+
+
+.mensajeError{
+	color: red;
+	text-decoration:underline;
+}
+
+
+
+.gerardTitulo h2{
+	font-family: var(--letra-tipo-tituloPrincipal);
+    font-size:var(--tamaño-letra-tituloPrincipal);
+    line-height: var(--altura-linia-tituloPrincipal);
+    margin-bottom:24px;
+}
+
+
+.gerardInput{
+	display:flex;
+	flex-direction:column;
+}
+
+
+.gerardInput input{
+	 font-family: var(--letra-tipo-descripcion);
+    font-size:var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+	padding:8px;
+	border-radius:6px;
+	border:none;
+	margin-bottom:16px;
+}
+
+
+.gerardEntrar{
+	margin-bottom:64px;
+}
+
+button{
+	background-color:var(--color-naranga-boton);
+	border:none;
+	border-radius:3px;
+	padding:4px 20px 4px 20px;
+	margin-top:8px;
+	position:relative;
+    z-index:1;
+    overflow:hidden;
+	
+}
+
+
+button p{
+	color:var(--color-texto-blanco);
+	 font-family: var(--letra-tipo-descripcion);
+    font-size:var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+  
+    
+	
+}
+
+
+
+button p::before{
+	content:'';
+	position:absolute;
+	top:0;
+	left:110%;
+	height:100%;
+	width:130%;
+	transform: skewX(25deg);
+	transition: all 1s ease 0s;
+	background-color:var(--color-hover-boton);
+	color:white;
+	z-index:-1;
+	
+}
+
+
+button:hover p::before{
+	left:-8px;
+	width:120%;
+	z-index:-1;
+	
+}
+
+.gerardRegistro{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	margin-bottom:24px;
+	align-items: center;
+}
+
+.gerardRegistro button{
+	margin-left:8px;
+}
+
+
+@media(max-width:500px){
+	.gerardRegistro{
+	display:flex;
+	flex-direction:column;
+	}
+	
+	.gerardLogin {
+	padding:50px 24px;
+	}
+	
+	.gerardTitulo h2{
+	font-family: var(--letra-tipo-tituloPrincipal);
+    font-size:var(--tamaño-letra-tituloSecundario);
+    line-height: var(--altura-linia-tituloSecundario);
+    margin-bottom:24px;
+}
+	
+	
+	
+}

@@ -1,0 +1,1163 @@
+.ContenedorGlobalDetalle {
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+    position: relative;
+}
+
+.mensajeRespuesta{
+	width:100%;
+	text-align:center;
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-targeta);
+	margin-bottom: 16px;
+}
+
+.mensajeCorrecto{
+	color:green;
+}
+
+.mensajeError{
+	color:red;
+}
+
+.TituloPagina {
+    width: auto; 
+    max-width: 100%; 
+    text-align: center;
+    color: black;
+    font-size: 64px; 
+    font-family: Rancho;
+    font-weight: 400;
+    line-height: 89.60px;
+    white-space: nowrap; 
+}
+
+/*---------------------------------------Zona informacion------------------------------------------*/
+.contenedorPadre{
+	margin: 0 auto;
+	max-width: 100%;
+	position:relative;
+}
+
+.Detalles {
+    width: 436px; 
+    height: 412px; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 40px; 
+    display: inline-flex;
+    margin-left: 6%; 
+    margin-top: 70px; 
+}
+
+.Detalles .Info{
+	width: 292px; 
+	height: 32px; 
+	color: black; 
+	font-size: 24px; 
+	font-family: Mulish; 
+	font-weight: 700; 
+	line-height: 33.60px; 
+	word-wrap: break-word;
+}
+
+.Detalles .ContenedorLocalizacion{
+	justify-content: flex-start; 
+	align-items: center; 
+	gap: 16px; 
+	display: inline-flex;
+}
+
+.fa-location-dot {
+    font-size: 24px; 
+    background: var(--Gradiente-con-naranja, linear-gradient(260deg, #80964C -2.89%, #EE972E 90.26%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.Poblacion{
+	color: black; 
+	font-size: 24px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 33.60px; 
+	word-wrap: break-word;
+}
+
+.Detalles .Descripcion{
+	width: 436px; 
+	text-align: center; 
+	color: black; 
+	font-size: 24px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 33.60px; 
+	word-wrap: break-word;
+}
+
+.AddToFavs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddToFavs .ToSubmit {
+    width: 143px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--Color-Marca-Op-Azul-Medio, #003770);
+    font-family: 'Rancho';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33.6px; 
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap; 
+    background: none; 
+    border: none;
+    cursor: pointer; 
+    padding: 0; 
+}
+
+.AddToFavs .ToSubmit:hover {
+    background: var(--Gradiente-con-naranja, linear-gradient(260deg, #80964C -2.89%, #EE972E 90.26%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline; 
+}
+
+
+/*---------------------------------------Carrito------------------------------------------*/
+.SelectCantidad {
+    width: 268px;
+    height: 163px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    position: absolute;
+    top: 300px;  
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.CantidadesCompra {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    gap: 16px;
+}
+
+.fa-solid.fa-cart-shopping {
+    width: 30px;  
+    height: 30px; 
+    display: inline-block;
+    font-size: 30px; 
+    line-height: 30px;
+}
+
+.numero {
+    flex: 0 1 auto;
+    background: white; 
+    border-radius: 5px;  
+    border: 1px solid black; 
+    height: 30px;  
+}
+
+.LineaPorcentajeDescuento, .LineaPrecioUnitario {
+    display: flex;
+    flex-direction: row;   
+    justify-content: center; 
+    align-items: center;
+    gap: 8px; 
+    color: #000;  
+    font-family: 'Mulish';
+    font-size: 24px; 
+    font-style: normal;
+    font-weight: 500; 
+    line-height: 33.6px; 
+}
+
+.LineaPorcentajeDescuento{
+	color:red;
+}
+
+.ContenedorCompra {
+    align-self: stretch; 
+    height: 40px; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 16px; 
+    display: flex;
+}
+
+.ContenedorCompra .ToSubmit {
+    display: flex;
+    width: 206px;
+    padding: 0px 24px; 
+    justify-content: center;
+    align-items: center;
+    gap: 16px; 
+    border-radius: 8px;
+    background: var(--Color-Contraste-Naranja-Principal, #E67B09);
+    color: var(--Base-Blanco, rgba(255, 255, 255, 0.70));
+    border: none;
+    overflow: hidden;
+    font-family: Mulish;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33.6px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.ContenedorCompra .ToSubmit::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 210px;
+    width: 130%;
+    height: 120%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    z-index: 0;
+}
+
+.ContenedorCompra .ToSubmit:hover::before {
+    left: -37px;
+    top: -2px;
+    width: 270%;
+    z-index: 0;
+}
+
+.ContenedorCompra .ToSubmit label {
+    position: relative;
+    z-index: 1;
+    color: var(--color-texto-blanco);
+    font-family: var(--letra-tipo-tituloTargeta);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+}
+
+.ContenedorCompra .ToSubmit:hover {
+    box-shadow: 5px 8px 11.6px 0px rgba(0, 0, 0, 0.30);
+}
+
+.ContenedorCompra .ToSubmit:active {
+    background: var(--Color-Contraste-Naranja-Claro, rgba(217, 196, 174, 0.95));
+    box-shadow: 3px 3px 12.9px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+
+
+/*---------------------------------------Foto------------------------------------------*/
+
+.ContenedorDescuento {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    min-width: 90px;
+    margin-left: calc(55% - 45px); 
+    top: -88px; 
+}
+
+.Circulo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 84.88, 84.88, 0.50);
+    border-radius: 50%;
+    right: -20px;
+    top: -60px; 
+}
+
+.Porcentaje {
+    text-align: center;
+    color: #111D38;
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 700;
+    line-height: 22.40px;
+    word-wrap: break-word;
+}
+
+.ImagenProducto{
+	width: 452px; 
+	height: 456px; 
+	justify-content: flex-start; 
+	align-items: flex-start; 
+	gap: 10px; 
+	display: inline-flex;
+	margin-left: calc(67% - 45px);
+    top: 0 px; 
+    right: 50px;
+	position:absolute;	
+}
+
+/*---------------------------------------Boton volver------------------------------------------*/
+
+.ContenedorBotonVolver {
+    width: 173px;
+    height: 34px;
+    padding-left: 48px;
+    padding-right: 48px;
+    background: white;
+    border-radius: 8px;
+    border: 1px #E67B09 solid;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    display: flex; 
+    margin: 20px auto 0 auto; 
+    text-decoration: none;
+}
+
+.ContenedorBotonVolver:hover {
+    background: white; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.50);
+    border: 1px #855840 solid; 
+}
+
+.ContenedorBotonVolver:active {
+    background: white;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25) inset; 
+    border: 1px rgba(217, 196, 174, 0.95) solid;
+}
+
+
+.BotonVolver{
+	color: #E67B09; 
+	font-size: 24px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 33.60px; 
+	word-wrap: break-word;
+	text-decoration: none;
+}
+
+
+.ContenedorBotonVolver:hover .BotonVolver {
+    color: #855840; 
+}
+
+.ContenedorBotonVolver:active .BotonVolver {
+    color: rgba(217, 196, 174, 0.95); 
+}
+
+/*---------------------------------------Comentarios------------------------------------------*/
+
+.TituloComentariosFijado{
+	width: 258px; 
+	height: 48px; 
+	color: black; 
+	font-size: 48px; 
+	font-family: Mukta Vaani; 
+	font-weight: 400; 
+	line-height: 67.20px; 
+	word-wrap: break-word;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.ContenedorPadreInferior {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1288px;
+    position: relative;
+    top: 50px;
+}
+
+.ContenedorTarjetas {
+    flex: 1;  
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;  
+    margin-left:13.5%;
+    margin-top: 24px;
+}
+
+.slick-prev.slick-arrow{
+	position:absolute;
+	height:40px;
+	width:40px;
+    left: 47.5%;
+    border-radius:50%;
+    z-index:1;
+	margin-top: 140px;
+
+}
+
+.slick-prev.slick-arrow:hover{
+    background: var(--color-naranga-boton);
+    box-shadow: var(--sombra-inputs);
+	border:none;
+}
+
+.slick-prev.slick-arrow:hover:before{
+    color:white;
+}
+
+.slick-prev:before{
+    content: '\f105';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color:grey;
+ 
+}
+
+.ContenidoTarjetaCompleto {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px; 
+}
+
+.ContenedorTarjeta{
+	flex-direction: column; 
+	justify-content: flex-start; 
+	align-items: flex-end; 
+	gap: 8px; 
+	display: inline-flex;
+}
+
+.Tarjeta {
+	height: auto;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	display: flex;
+	width: 432px;
+	border-radius: 24px;
+	border: 1px solid #949494;
+	background: #D4DEB8;
+	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.50);
+	padding-left: 16px; 
+}
+
+.Tarjetita{
+	flex-direction: column; 
+	justify-content: flex-start; 
+	align-items: flex-start; 
+	display: flex;
+}
+
+.ContenedorNombre{
+	padding: 8px; 
+	justify-content: center; 
+	align-items: center; 
+	display: inline-flex;
+}
+
+.Nombre{
+	color: black; 
+	font-size: 24px; 
+	font-family: Rancho; 
+	font-weight: 400; 
+	line-height: 33.60px; 
+	word-wrap: break-word;
+}
+
+.ContenedorTextoComentario{
+	padding: 8px; 
+	justify-content: center; 
+	align-items: center; 
+	display: inline-flex;
+}
+
+.TextoComentario{
+	width: 390px; 
+	color: black; 
+	font-size: 16px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 22.40px; 
+	word-wrap: break-word;
+}
+
+.ContenedorFecha{
+	padding: 8px; 
+	justify-content: center; 
+	align-items: center; 
+	gap: 10px; 
+	display: inline-flex;
+}
+
+.Fecha{
+	color: black; 
+	font-size: 16px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 22.40px; 
+	word-wrap: break-word;
+}
+
+.Puntuacion {
+    color: black;
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 500;
+    line-height: 22.40px;
+    word-wrap: break-word;
+    padding-left: 8px; 
+    padding-bottom: 8px;
+
+}
+
+
+.slick-next.slick-arrow{
+	position:absolute;
+	height:40px;
+	width:40px;
+	left: 40.5%;
+	border-radius:50%;	
+	z-index:1;
+	margin-top: 140px;
+}
+
+.slick-next:before{
+    content: '\f104';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color:grey; 
+}
+
+.slick-next.slick-arrow:hover{
+    background: var(--color-naranga-boton);
+    box-shadow: var(--sombra-inputs);
+	border:none;
+}
+
+.slick-next.slick-arrow:hover:before{
+    color:white;
+}
+
+
+/*---------------------------------------Formulario comentarios------------------------------------------*/
+
+.ContenedorFormularioComentarios {
+    width: 435px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    z-index: 1;
+    margin: 72px auto 0;
+    position: relative; 
+}
+
+.Formulario{
+	flex-direction: column; 
+	justify-content: center; 
+	align-items: flex-start; 
+	gap: 32px; display: flex;
+}
+
+.ContenedorCampo {
+  width: 435px; 
+  padding: 8px 10px; 
+  background: white; 
+  border-radius: 8px; 
+  border: 1px solid black;
+  display: block;
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 24px; 
+  font-family: 'Mulish', sans-serif; 
+  font-weight: 500;
+  line-height: 33.60px; 
+  box-sizing: border-box; 
+  margin-bottom: 16px; 
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.50);
+}
+
+.TextArea {
+  width: 435px; 
+  height: 224px;
+  padding: 24px; 
+  background: white; 
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.50); 
+  border-radius: 8px; 
+  border: 1px solid black;
+  display: block;
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 24px; 
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500; 
+  line-height: 33.60px;
+  box-sizing: border-box; 
+  outline: none;
+  resize: none; 
+}
+
+.ContenedorPuntuacion {
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    display: flex; 
+    width: 100%; 
+    margin: 0 auto; 
+    margin-top:16px;
+}
+
+.TituloPuntuacion{
+	width: 89px; 
+	height: 22px; 
+	color: black; 
+	font-size: 16px; 
+	font-family: Mulish; 
+	font-weight: 500; 
+	line-height: 22.40px; 
+	word-wrap: break-word;
+}
+
+.ContenedorCantidadPuntuacion{
+	justify-content: flex-start; 
+	align-items: center; 
+	display: flex;
+}
+
+.DesplegableCantidad{
+	width: 44px; 
+	height: 34px; 
+	background: white; 
+	border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	border: 1px black solid;
+}
+
+.FlechaAbajoDesplegable{
+	width: 34px; 
+	height: 34px; 
+	background: #D9D9D9; 
+	border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	border: 1px black solid; 
+	justify-content: center; 
+	align-items: center; 
+	gap: 10px; 
+	display: flex;
+}
+
+.VectorDesplegable{
+	width: 30px; 
+	height: 30px; 
+	transform: rotate(-179.91deg); 
+	transform-origin: 0 0; 
+	background: black;
+}
+
+
+.ContenedorBotonEnviarComentario{
+	margin-top:24px;
+	margin-left:auto;
+	margin-right: auto;
+	width: fit-content;
+	}
+
+
+
+
+.BotonEnviarComentario{
+	padding:0 30px 0 30px;
+	border-radius:6px;
+	color:var(--color-texto-blanco);
+	background:var(--color-naranga-boton);
+	border:none;
+	overflow:hidden;
+	
+
+}
+
+
+.BotonEnviarComentario label{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	position:relative;
+	z-index:1;
+	
+}
+
+.BotonEnviarComentario label::before{
+	content:'';
+	position:absolute;
+	top: -1px;
+    left: 190px;
+    width: 130%;
+	height: 120%;
+	transform: skewX(25deg);
+	transition: all 1s ease 0s;
+	background-color:var(--color-hover-boton);
+	color:white;
+	z-index:-1;
+}
+
+
+
+.BotonEnviarComentario a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	text-decoration:none;
+	position:relative;
+	z-index:1;
+	
+}
+
+.BotonEnviarComentario:hover label::before{
+    left: -37px;
+    top: -2px;
+    width: 270%;
+    z-index: -1;
+}
+
+
+.BotonEnviarComentario a::before{
+	content:'';
+	position:absolute;
+	top: -1px;
+    left: 170px;
+    width: 130%;
+	height: 120%;
+	transform: skewX(25deg);
+	transition: all 1s ease 0s;
+	background-color:var(--color-hover-boton);
+	color:white;
+	z-index:-1;
+}
+
+.BotonEnviarComentario:hover a::before{
+    left: -37px;
+    top: -2px;
+    width: 270%;
+    z-index: -1;
+}
+
+
+
+/*------------------------------------------Responsive----------------------------------------------*/
+@media(max-width:1380px){
+	.Circulo {
+    	right: 10px;
+	}
+}
+
+
+@media(max-width:1315px){
+	.Circulo {
+    	right: 40px;
+	}
+}
+
+
+
+@media (max-width: 1265px) {
+    .contenedorPadre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        top: 24px;
+    }
+
+    .Detalles .Info, .Detalles .Descripcion{
+        width: 100%; 
+        text-align: center;
+        margin-bottom: 10px; 
+    }
+    
+    .Detalles, .SelectCantidad {
+        width: 90%;
+        margin: 10px auto;
+        box-sizing: border-box; 
+    }
+
+    .SelectCantidad {
+        position: relative; 
+        transform: none; 
+        top: 24px;
+        left: 0;
+    } 
+    
+    .ContenedorDescuento{
+        width: auto;
+	    min-width: 90px;
+	    margin-left: calc(35% - 45px);
+	    top: -8px;
+    }
+    
+    .Circulo {
+        position: absolute;
+        top: 32px;
+        right: 10px; 
+        transform: translateX(0%); 
+    }
+    
+    .ImagenProducto {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    width: 90%; 
+	    margin: 20px 0 0 0; 
+	    position: relative;
+	    order: 2;
+	    transform: none;
+	    top: 56px;
+	    left: 0;
+	}
+	
+	.ContenedorBotonVolver{
+		margin-top: 100px;
+	}
+	    
+	.TituloComentariosFijado{
+		margin-top: 80px;
+	}
+	
+	.ContenedorTarjetas{
+		margin-left: 30%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 28.5%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 21.5%;
+	}	
+}
+
+
+@media(max-width:1070px){
+	.Circulo {
+    	right: 0px;
+	}
+	
+	.ContenedorTarjetas{
+		margin-left: 25%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 30%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 23%;
+	}
+}
+
+
+@media(max-width:980px){
+	.Circulo {
+    	right: -40px;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 33%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 26%;
+	}
+}
+
+
+@media (max-width: 920px) {
+    .ContenedorPadreInferior {
+        flex-direction: column;
+        align-items: center; 
+    }
+       
+     .Tarjeta {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .Tarjeta {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-start;
+	}   
+    
+    .ContenedorFecha, .Puntuacion {
+	    align-self: flex-start;
+	    padding-left: 8px;   
+	}
+	
+    
+    .ContenedorTarjetas{
+		margin-left: 23.5%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 34%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 25%;
+	}
+}
+
+
+@media (max-width: 820px) {
+	.ContenedorTarjetas{
+		margin-left: 21%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 36%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 27%;
+	}
+}
+
+
+@media(max-width:780px){
+	.Circulo {
+    	right: -88px;
+	}
+	
+	.ContenedorTarjetas{
+		margin-left: 19%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 38%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 29%;
+	}
+}
+
+
+@media(max-width:695px){
+	.ContenedorTarjetas{
+		margin-left: 16%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 44%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 33%;
+	}
+}
+
+
+@media(max-width:625px){
+	.ContenedorTarjetas{
+		margin-left: 13%;
+	}
+	
+	.slick-prev.slick-arrow{
+    	left: 46%;
+	}
+
+	.slick-next.slick-arrow{
+		left: 33%;
+	}
+}
+
+
+@media(max-width:600px){
+	.ContenedorTarjetas{
+		margin-left: 17%;
+	}
+	
+	.Tarjeta {
+		width: 343px;
+	}
+
+	.Nombre{
+		color: black; 
+		font-size: 24px; 
+		font-family: Rancho; 
+		font-weight: 400; 
+		line-height: 33.60px; 
+		word-wrap: break-word;
+	}
+	
+	.TextoComentario{
+		width: 298px;
+	}
+	
+	.slick-next.slick-arrow{
+		height:25px;
+		width:25px;
+		left: 33%;
+	}
+
+	.slick-prev.slick-arrow{
+		height:25px;
+		width:25px;   
+	    left: 42.5%;
+	}
+}
+
+
+@media (max-width: 535px) {
+	.slick-next.slick-arrow{
+		left: 37%;
+	}
+
+	.slick-prev.slick-arrow{ 
+	    left: 45.5%;
+	}
+}
+
+@media (max-width: 500px) {
+	.mensajeRespuesta{
+	font-size: 16px;
+	}
+	
+	.TituloPagina {
+        width: 89px;
+        height: 24px;
+        font-size: 24px; 
+        line-height: 33.6px; 
+        flex-shrink: 0;
+        color: #000; 
+	}
+	
+	.Detalles .Info {
+        width: 192px;
+        height: 17px;
+        font-size: 16px; 
+        line-height: 22.4px;
+        flex-shrink: 0; 
+        color: #000;
+        font-style: normal; 
+    }
+    
+    .fa-location-dot {
+    	font-size: 18px; 
+	}
+    
+    .Poblacion, .Detalles .Descripcion, .AddToFavs .ToSubmit, .LineaPorcentajeDescuento, .LineaPrecioUnitario{
+		font-size: 16px;
+		line-height: 22.4px;
+    }
+    
+    .AddToFavs .ToSubmit {
+		font-family: Mulish;
+    }
+    
+    .SelectCantidad {
+    	top: -80px;  
+	}
+    
+    .fa-solid.fa-cart-shopping {
+	    width: 18px;  
+	    height: 18px; 
+	    font-size: 18px; 
+	    line-height: 18px;
+	}
+
+	.numero {
+    	height: 18px;  
+	}
+	
+	.ContenedorCompra .ToSubmit {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 22.4px; 
+	} 
+	
+	.Circulo {
+    	top: -80px; 
+    	width: 28px;
+    	height: 28px;
+    	font-weight: 150;
+    	right: -56px;
+	}
+	
+	.ImagenProducto img {
+    	width: 343px;
+		height: 346px;
+    }
+    
+    .ImagenProducto{
+    	top: -120px; 
+    }
+    
+    .ContenedorBotonVolver {
+        width: 120px;  
+        height: 28px;  
+		margin-top: -120px;
+		position: relative;
+        z-index: 2;
+    }
+    .BotonVolver {
+        font-size: 16px; 
+    }
+    
+    .TituloComentariosFijado{
+		width: 90px;
+		height: 24px;
+		flex-shrink: 0;
+		color: #000;	
+		font-family: Rancho;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 33.6px; 
+		margin-top:  40px;
+    }
+    
+    .slick-next.slick-arrow{
+		left: 41%;
+	}
+
+	.slick-prev.slick-arrow{ 
+	    left: 49.5%;
+	}
+    
+   .ContenedorTarjetas{
+		margin-left: 12%;
+	} 
+ 
+    .ContenedorCampo, .TextArea{ 
+		font-size: 16px;
+ 	}
+ 
+ 	.BotonEnviarComentario{
+		font-size: 16px;
+		line-height: 22.4px;
+    }
+}
+

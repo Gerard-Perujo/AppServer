@@ -1,0 +1,750 @@
+
+/*tamaño de la imagen de presentacion*/
+ .FondoHeader1{
+    height: 600px;
+    display: none;
+
+}
+
+.FondoHeader1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.FondoHeader2{
+    height: 600px;
+    display:none;
+
+}
+
+
+.FondoHeader2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.gerardContenedorDeskop{
+    height: auto;
+    margin: 0 auto;
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+   	top: -600px;
+    left: 0;
+    width: 100%;
+
+}
+
+
+.gerardContenedorNavegador{
+    width: 100%;
+}
+
+.nuevoUsuario{
+	margin-left:8px;
+}
+
+.usuario{
+	margin-left:8px;
+}
+
+
+/*posicinamiento de los elementos del preheader*/
+.gerardPreHeaderDeskop{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    padding: 16px 8px 16px 8px;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+
+/*tamaño del contenedor de bienvenido*/
+.gerardBenvenido{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/*tamaño del contenedor de cerrar session*/
+.gerardCerrarSession{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.gerardCerrarSession span{
+    background:var(--color-naranga-boton);;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.gerardCerrarSession span:hover{
+   box-shadow: var(--sombra-inputs);
+}
+
+/*tamaño color tipo letra del preheader*/
+.gerardPreHeaderDeskop span{
+  font-family: var(--letra-tipo-targeta) ;
+  font-size: var(--tamaño-letra-targeta);
+  line-height: var(--altura-linia-targeta);
+  font-weight: 700;
+  color:var(--color-texto-blanco);
+}
+
+
+.gerardPreHeaderDeskop span i{
+  font-weight: 600;
+}
+
+
+
+.gerardContenidoDesckop{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.gerardContenedorWidth{
+    display: flex;
+    flex-direction: row;
+    height: 61px;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+}
+   
+
+.gerardNavegadorGrande{
+    background-color: white;
+    border-radius: 6px;
+    width: 80%;
+}
+
+.gerardNavegadorPequeño{
+    background-color: white;
+    border-radius: 6px;
+    width: 15%;
+    height: 61px;
+    transition: all 0.5s cubic-bezier(.645,.045,.355,1);
+}
+
+
+
+.gerardContenidoDesckop{
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.gerardContenidoDesckop ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.gerardContenidoDesckop ul li{
+    list-style: none;
+    margin: 0 32px 0 0;
+}
+
+.gerardContenedorDeskop a{
+    text-decoration: none;
+    font-family: var(--letra-tipo-targeta) ;
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    font-weight: 700;
+    color:var(--color-texto);
+}
+
+
+.gerardCerrarSession a{
+  text-decoration: none;
+  font-family: var(--letra-tipo-targeta) ;
+  font-size: var(--tamaño-letra-targeta);
+  line-height: var(--altura-linia-targeta);
+  font-weight: 700;
+  color:var(--color-texto-blanco);
+
+}
+
+.gerardContenidoDesckop ul li:hover a{
+   background-image:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+    position: relative;
+}
+
+.gerardContenidoDesckop ul li:hover a::before{
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image:var(--color-hover-gradiente);
+ }
+
+
+.gerardContenedorLogo{
+    width: 90px;
+    height: 45px;
+}
+
+.gerardContenedorLogo img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.gerardNavegadorPequeño .gerardContNavBotones{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 14px;
+}
+
+
+.gerardNavegadorPequeño .gerardContNavBotones button i{
+   font-size: var(--tamaño-letra-descripcion);
+   color:black;
+   
+}
+
+
+.gerardCesta{
+	right: 20px;
+    top: -10px; 
+	width: 48px;
+    height: 48px;
+}
+
+.MiUsuario{
+	left: 20px;
+    top: -10px; 
+	width: 48px;
+    height: 48px;
+}
+
+.gerardRegistro{
+    right: 20px;
+    top: -10px; 
+	width: 48px;
+    height: 48px;
+}
+
+.gerardLogin{
+	left: 20px;
+    top: -10px; 
+	width: 48px;
+    height: 48px;
+}
+
+.gerardNavegadorPequeño .gerardContNavBotones button{
+    background: transparent;
+    border: none;
+    position: relative;
+ }
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones button:hover i{
+    background-image:var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+ }
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardCesta::before{
+    content: 'Cesta';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35px;
+    left: -4px;
+    font-size: 16px;
+    font-family: mulish;
+    font-weight: 700;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(.645,.045,.355,1);
+ }
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardCesta:hover::before{
+    opacity: 1;
+    visibility: visible;
+ }
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardRegistro::before{
+    content: 'Registro';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35px;
+    left: -13px;
+    font-size: 16px;
+    font-family: mulish;
+    font-weight: 700;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(.645,.045,.355,1);
+ }
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardRegistro:hover::before{
+    opacity: 1;
+    visibility: visible;
+ }
+
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardLogin::before{
+    content: 'Acceder';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35px;
+    left: -12px;
+    font-size: 16px;
+    font-family: mulish;
+    font-weight: 700;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(.645,.045,.355,1);
+ }
+
+ .gerardNavegadorPequeño .gerardContNavBotones .gerardLogin:hover::before{
+    opacity: 1;
+    visibility: visible;
+ }
+
+ 
+ .gerardNavegadorPequeño .gerardContNavBotones .MiUsuario::before{
+    content: 'Usuario';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35px;
+    left: -4px;
+    font-size: 16px;
+    font-family: mulish;
+    font-weight: 700;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(.645,.045,.355,1);
+ }
+
+
+ .gerardNavegadorPequeño .gerardContNavBotones .MiUsuario:hover::before{
+    opacity: 1;
+    visibility: visible;
+ }
+ 
+ .UsuarioMovil{
+ 	padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+ 
+ }
+ 
+ 
+ .UsuarioMovil .nuevoUsuario{
+ 	margin:0;
+ }
+
+
+ 
+ .gerardContenedorMobil{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* CSS del menu mobil */
+.gerardContenedorMobil{
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    position: absolute;
+    top:0;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+}
+
+
+.gerardContenedorLogoMobil{
+    height: 90%;
+    width: 90px;
+    margin-left: 16px;
+}
+
+.gerardContenedorLogoMobil img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    top: 5px;
+}
+
+.gerardCestaHamburgesa{
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gerardCestaMobil i{
+    font-size: 25px;
+    color:var(--color-texto);
+}
+
+
+.gerardCestaMobil i:hover{
+    background-image:var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+}
+
+
+.btnHamburgesa{
+    width: 45px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+
+.btnHamburgesa span{
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    position: relative;
+    background-color: black;
+    
+
+}
+
+.gerardContenedorbtnHamburgesa:hover .btnHamburgesa span{
+    background-image:var(--color-hover-gradiente);
+}
+
+
+.btnHamburgesa span::before{
+    content: ' ';
+    width: 70%;
+    height: 2px;
+    position: relative;
+    bottom: 11px;
+    display: block;
+    background-color: black;
+    margin: 0 auto;
+    transition: all 0.5s cubic-bezier(.645,.045,.355,1);
+    z-index:1;
+}
+
+
+.btnHamburgesa:hover span::before{
+    width: 100%;
+    background-image:var(--color-hover-gradiente);
+}
+
+
+
+.btnHamburgesa span::after{
+    content: ' ';
+    width: 70%;
+    height: 2px;
+    position: relative;
+    top:9px;
+    display: block;
+    background-color: black;
+    margin: 0 auto;
+    transition: all 0.5s cubic-bezier(.645,.045,.355,1);
+}
+
+
+.btnHamburgesa:hover span::after{
+    width: 100%;
+    background-image:var(--color-hover-gradiente);
+}
+
+/* CSS del menu desplegable del mobil */
+.gerardMenuMobilActivo{
+    background-color:rgba(255,255,255,1);
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -205px;
+    z-index: 1;
+    border-radius: 10px;
+    transition: all 0.8s cubic-bezier(.645,.045,.355,1);
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.gerardContenedorLogoActivo{
+    height: 90%;
+    width: 90px;
+    margin-left: 16px;
+}
+
+.gerardContenedorLogoActivo img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+
+.gerardCerrarMobil{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.gerardCerrarMobil button{
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    margin: 5px 5px 0 0;
+    border: none;
+    font-size:0;
+    background-color: transparent;
+}
+
+
+.gerardCerrarMobil button:hover::after{
+   transform: rotate(0);
+   background-image:var(--color-hover-gradiente);
+}
+
+.gerardCerrarMobil button:hover::before{
+    transform: rotate(0);
+    background-image:var(--color-hover-gradiente);
+ }
+
+
+.gerardCerrarMobil button::after{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: relative;
+    background-color: black;
+    transform: rotate(45deg);
+    bottom: 2px;
+    transition: all 0.5s cubic-bezier(.645,.045,.355,1);
+}
+
+.gerardCerrarMobil button::before{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: relative;
+    background-color: black;
+    transform: rotate(-45deg);
+    transition: all 0.5s cubic-bezier(.645,.045,.355,1);
+}
+
+
+.gerardlistaOpciones{
+    list-style: none;
+    padding: 10px;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+
+.gerardlistaOpciones li{
+    font-family: var(--letra-tipo-targeta) ;
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    margin-bottom: 8px;
+   
+}
+
+.gerardlistaOpciones li a{
+   text-decoration: none;
+    color:var(--color-texto); 
+    
+   
+}
+
+.gerardlistaOpciones li p{
+   margin: 0;
+   width: fit-content;
+}
+
+.gerardContenedorOpciones .gerardlistaOpciones li:hover > p{
+    background-image:var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+    position: relative;
+ }
+
+
+ .gerardContenedorOpciones .gerardlistaOpciones li:hover > p::before{
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image:var(--color-hover-gradiente);
+ }
+
+ .gerardContenedorOpciones .gerardlistaOpciones li:hover > a{
+    background-image:var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+    position: relative;
+ }
+
+
+
+.gerardContenedorOpciones .gerardlistaOpciones  li:hover > a::before{
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image:var(--color-hover-gradiente);
+}   
+
+
+.gerardOpcinesUsuario{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    list-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    bottom: -35px;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(.645,.045,.355,1);
+}
+
+.gerardlistaOpciones li:nth-child(1):hover .gerardOpcinesUsuario{
+    left: 140px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+ }
+
+
+ .gerardContenedorOpciones .gerardlistaOpciones .gerardOpcinesUsuario li:hover > a{
+    background-image:var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+    position: relative;
+ }
+
+ .gerardContenedorOpciones .gerardlistaOpciones .gerardOpcinesUsuario li:hover > a::before{
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image:var(--color-hover-gradiente);
+} 
+
+.gerardOpcionesTienda{
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    background-color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    list-style: none;
+    transition: all 0.8s cubic-bezier(.645,.045,.355,1);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+
+.gerardlistaOpciones li:nth-child(2):hover .gerardOpcionesTienda{
+    left: 140px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+ }
+
+
+ #fondoNegro{
+   position: absolute;
+   top: 0;
+   left: 0;
+ }
+
+
+
+ /* .gerardContenedorMobil::before{
+    content: '';
+    width: 100%;
+    height: 2000px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+
+
+
+
+
+
+
+ @media (max-width:900px){
+    .gerardContenedorDeskop{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    .gerardContenedorMobil{
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    
+
+ }
+
+
+
+
+
+

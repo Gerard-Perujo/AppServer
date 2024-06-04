@@ -1,0 +1,381 @@
+section{
+	display:block;
+}
+.gerardContenedorPadre{
+	max-width:1200px;
+	padding: 0 16px 0 16px;
+	margin: 0 auto;
+}
+
+.contenedorTramitarCompra{
+	display:flex;
+	flex-direction: row;
+}
+
+.gerardDatosFacturacion{
+	padding-top:64px;
+}
+
+.gerardContenedorProductos{
+	padding-top:64px;
+}
+
+.TramitarCompra{
+	padding-top:64px;
+}
+
+.contenedorCompra{
+	padding:16px;
+	width:100%;
+}
+
+.gerardTituloSeccion{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+	color:var(--color-texto);
+	border-bottom: 3px black solid;
+}
+
+
+.datosPersonales{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+}
+
+.datosPersonales input{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	width: 250px;
+}
+
+
+.datosPersonales>div{
+ 	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:16px;
+}
+
+
+.datosFacturacion{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	display:flex;
+	flex-direction:column;
+	padding:16px 0 16px 0;
+}
+.datosFacturacion select{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	width: 60%;
+
+}
+
+.datosFacturacion .formulariobtn{
+	margin-left:24px;
+}
+
+
+.datosFacturacion>div>div{
+	display:flex;
+	flex-direction:row;
+	justify-content: flex-end;
+
+	
+}
+
+.datosFacturacion>div>.gerardTarjetas{
+	width:54%;
+
+	
+}
+
+
+
+.datosFacturacion>div{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	margin-bottom:16px;
+}
+
+.gerardContenedorProductos .listaProductosCompra:first-child{
+	margin-top:16px;
+}
+
+.listaProductosCompra{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom:2px black solid;
+    padding: 16px 0 16px 0;
+}
+
+.grupo1{
+	display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.grupo2{
+	display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.grupo3{
+	width:50%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nombreProducto{
+	display: flex;
+    flex-direction: column;
+}
+
+
+.cantiadProducto{
+	display: flex;
+    flex-direction: column;
+}
+
+
+.precioCompraProducto{
+	display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+.tablaTitulo{
+	font-weight:900;
+	margin-bottom: 40px;
+}
+
+.imagenProducto .tablaTitulo{
+	margin-bottom:0;
+}
+
+.listaProductosCompra>div>div{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	display: flex;
+    flex-direction: column;
+    font-weight: unset;
+    margin-bottom:0;
+    height: auto;
+  
+}
+
+
+.listaProductosCompra:last-child{
+    border:none;
+    padding-bottom:24px;
+}
+   
+
+.imagenProducto{
+	width:100px;
+	height:100px;
+}
+
+.imagenProducto img{
+	width:100%;
+	height:100%;
+	object-fit: fill;
+}
+
+.utilizarPuntos{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+	display: flex;
+    justify-content: space-between;
+}
+
+.utilizarPuntos label:last-child{
+	font-weight:900;
+}
+
+.gastosEnvio{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+	display: flex;
+    justify-content: space-between;
+}
+
+.gastosEnvio label:last-child{
+	 font-weight:900;
+}
+
+.clientePecoClub{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+	display: flex;
+    justify-content: center;
+    font-weight:900;
+}
+
+.clienteFamiliaNumeros{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+	display: flex;
+    justify-content: space-between;
+}
+
+.clienteFamiliaNumeros label:last-child{
+    font-weight:900;
+}
+
+.TotalPedido{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:16px 0 16px 0;
+	display: flex;
+    justify-content: flex-end;
+}
+
+.TotalPedido label:last-child{
+	font-weight:900;
+}
+
+.TotalPedido label:first-child{
+	margin-right:24px;
+}
+
+.envioGratuito{
+	font-family:var(--letra-tipo-descripcion);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding:40px 0 48px 0;
+	text-align: center;
+	font-weight:900;
+}
+
+.botonRealizarPedido .formulariobtn{
+	width:100%;
+	padding: 8px 16px;
+}
+
+.botonRealizarPedido .formulariobtn label::before{
+	    top: -9px;
+    left: 480px;
+    width: 130%;
+    height: 190%;
+}
+
+.botonRealizarPedido .formulariobtn:hover label::before{
+        left: -360px;
+    width: 750%;
+    z-index: -1;
+}
+
+
+@media(max-width:764px){
+	
+	.gerardTituloSeccion{
+		font-size: var(--tamaño-letra-tituloTargeta);
+		line-height: var(--altura-linia-tituloTargeta);
+	
+	}
+	
+	.listaProductosCompra{
+		
+	    flex-direction: column;
+	   
+	}
+	
+	.grupo1{
+		margin-bottom:16px;
+	}
+	
+	.grupo2{
+		margin-bottom:16px;
+	}
+	
+	.grupo3{
+		width:100%;
+	    align-items:center;
+	}
+	
+	.datosFacturacion>div{
+		flex-direction:column;
+		align-items:center;
+		margin-bottom:16px;
+	}
+	
+	.datosFacturacion>div label{
+		margin-bottom:8px;
+	}
+	
+	.datosFacturacion select{
+		margin-left:0;
+	}
+	
+	.datosFacturacion>div>div{
+		width:100%;
+		justify-content:space-between;
+
+	}
+	
+	.datosFacturacion>div>.gerardTarjetas{
+		width:100%;
+	}
+	
+	.datosPersonales>div{
+	    flex-direction: column;
+	  
+	}
+	
+	.datosPersonales>div label{
+	    margin-bottom:8px;
+	  
+	}
+	
+	.utilizarPuntos{
+		display: flex;
+	    flex-direction:column;
+	    align-items:center;
+	}
+	
+	.utilizarPuntos>div{
+		margin-bottom:8px;
+	}
+
+}

@@ -1,0 +1,155 @@
+
+.formularioAgregar{
+	display:flex;
+	font-family: var(--letra-tipo-targeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	justify-content: center;
+}
+
+.contenedorPrincipal{
+	margin: 0 auto;
+}
+
+.contenedorDirecciones{
+	width:100%;
+}
+
+.noeliaNavegador{
+	padding-right:16px;
+}
+
+.formularioIzq{
+	width:80%;
+	text-align:left;
+}
+
+.formularioIzq>div{
+	display:flex;
+	flex-direction:column;
+	margin-bottom:16px;
+}
+.formularioIzq>div input{
+	font-size:var(--tamaño-letra-targeta);
+}
+
+.formularioIzq>div select{
+	font-size:var(--tamaño-letra-targeta);
+}
+
+.formularioIzq>div textarea{
+	font-size:var(--tamaño-letra-targeta);
+	height:200px;
+	overflow:hidden;
+}
+
+.imagenProducto{
+	width:75%;
+}
+
+.imagenProductoDetalle{
+	width:75%;
+}
+
+.contenedorImagenAgregar{
+	height: 300px;
+    width: 100%;
+    margin-top: 16px;
+    
+}
+
+.contenedorImagenAgregar img{
+	height: 100%;
+    width: 100%;
+    object-fit:fill;
+}
+
+
+.formularioDrc{
+	width:50%;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap:48px;
+}
+
+.formularioDrc label{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.ToSubmit{
+	width:100%;
+	margin-left:0;
+}
+
+.ToSubmit label::before{
+	content: '';
+    position: absolute;
+    top: -6px;
+    left: 520px;
+    width: 130%;
+    height: 170%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    color: white;
+    z-index: -1;
+}
+
+
+.ToSubmit:hover label::before{
+    left: -460px;
+    top: -6px;
+    width: 1600%;
+    z-index: -1;
+}
+
+/* TITULO */
+.noeliaTitulo{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+
+.noeliaTitulo p {
+  text-align: left;
+}
+
+.noeliaTitulo p{	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+}
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 35px;
+}
+
+@media(max-width:764px){
+	.formularioAgregar{
+		flex-direction:column;
+	}
+	
+	.formularioIzq{
+		width:100%;
+		
+	}
+	
+	.formularioDrc{
+		width:100%;
+		
+	}
+}

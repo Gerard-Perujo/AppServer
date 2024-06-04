@@ -1,0 +1,209 @@
+section{
+	position:relative;
+	top:-120px;
+}
+
+
+
+.gerardContenedorNormas{
+	max-width:1200px;
+	margin:0 auto;
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	
+}
+
+
+.gerardTitulo{
+   margin-bottom:16px;
+}
+
+
+
+.gerardTitulo h2{
+    font-family: var(--letra-tipo-tituloPrincipal) ;
+    font-size: var(--tamaño-letra-tituloPrincipal);
+    line-height: var(--altura-linia-tituloPrincipal);
+    text-align:center;
+}
+
+.gerardTitulo h2 span{
+	 font-family: var(--letra-tipo-tituloPrincipal) ;
+    font-size: var(--tamaño-letra-tituloPrincipal);
+    line-height: var(--altura-linia-tituloPrincipal);
+   background-image:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+}
+
+
+.gerardSubtitulo{
+	max-width:800px;
+	margin: 0 auto 96px auto;
+
+}
+
+.gerardSubtitulo p{
+	text-align: center;
+}
+
+
+.gerardContenedorNosotros{
+	padding:16px
+}
+
+
+.tituloSecundario{
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+	margin-bottom: 32px;
+	padding-left:16px;
+	text-align:center;
+}
+
+
+.tituloContenido h2{
+	text-align:center;
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+	margin-bottom: 24px; 
+}
+
+
+.tituloContenido h2 span{
+	text-align:center;
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+	margin-bottom: 24px; 
+	 background-image:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+}
+
+.gerardInformacionFruta{
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+	margin-bottom:64px;
+}
+
+
+.gerardInformacionVerdura{
+	display:flex;
+	flex-direction: row-reverse;
+	align-items:center;
+	margin-bottom:64px;
+}
+
+.gerardInformacionProductos{
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+}
+
+.contenedorTexto{
+	padding:0 8px 0 8px;
+	width:50%;
+}
+
+
+.contenedorImagen{
+	width:50%;
+	height:309px;
+	padding:0 8px 0 8px;
+}
+
+.contenedorImagen img{
+	width:100%;
+	height:100%;
+	object-fit:fill;
+	border-radius:24px;
+}
+
+
+
+
+
+@media(max-width:764px){
+	
+		.gerardInformacionFruta{
+		display:flex;
+		flex-direction: column-reverse;
+		align-items:center;
+		margin-bottom:24px;
+		}
+
+
+		.gerardInformacionVerdura{
+		display:flex;
+		flex-direction: column-reverse;
+		align-items:center;
+		margin-bottom:24px;
+	}
+
+		.gerardInformacionProductos{
+		display:flex;
+		flex-direction: column-reverse;
+		align-items:center;
+	}
+	
+	.contenedorImagen{
+	width:100%;
+	margin-bottom:24px;
+	
+	}
+	
+	.contenedorTexto{
+	width:100%;
+	margin-bottom:64px;
+}
+
+	.gerardTitulo h2{
+        font-family: var(--letra-tipo-tituloMobil) ;
+         font-size: var(--tamaño-letra-tituloSecundario);
+        line-height: var(--altura-linia-tituloSecundario);
+    }
+    
+     .gerardTitulo h2 span{
+        font-family: var(--letra-tipo-tituloMobil) ;
+        font-size: var(--tamaño-letra-tituloSecundario);
+        line-height: var(--altura-linia-tituloSecundario);
+    }
+    
+    .tituloContenido h2{
+	text-align:center;
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+	margin-bottom: 24px; 
+}
+
+
+.tituloContenido h2 span{
+	text-align:center;
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+	margin-bottom: 24px; 
+	 background-image:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

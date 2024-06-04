@@ -1,0 +1,294 @@
+
+.pecoClubContenedor{
+	font-family: var(--letra-tipo-targeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height:var(--altura-linia-targeta);
+	color:var(--color-texto);
+	padding: 16px;
+	width:100%;
+}
+
+.movimientosPuntos{
+	text-align:left;
+	font-weight: 800;
+	padding:8px 0;
+}
+
+.saldoAcumulado{
+	background: var(--color-verde-claro);
+    max-width: 500px;
+    margin: 24px auto;
+    padding: 24px 72px;
+    border-radius: 40px;
+}
+
+
+/***************************/
+
+        .movimientos {
+        /*overflow: scroll;*/
+            overflow: auto;
+            height: 250px;
+            scrollbar-width: thin; /* Para Firefox */
+            scrollbar-color: #FFFFFF; /* Para Firefox */
+        }
+
+        /* Personalización del scroll para navegadores WebKit (Chrome, Safari, Edge) */
+        .movimientos::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .movimientos::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .movimientos::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        .movimientos::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        .tablaMovimientos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .fechaMovimiento,
+        .pedido,
+        .puntosConsegidos {
+            flex: 1;
+            text-align: center;
+        }
+
+
+/***************************/
+
+.tablaMovimientos{
+	 display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px black solid;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.privilegiosUsuario{
+	padding-top:24px;
+}
+
+.servicioPremium{
+	 display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    text-align: left;
+}
+.servicioPremium label{
+	padding-bottom:8px;
+}
+
+/*BOTONES*/
+.formulariobtn{
+	padding: 0 15px 0 15px;
+	border-radius:6px;
+	color:var(--color-texto-blanco);
+	background:var(--color-naranga-boton);
+	border:none;
+	overflow:hidden;
+	text-align: center;
+
+}
+
+
+.servicioPremium .formulariobtn{
+	padding:8px 30px;
+}
+
+
+
+.formulariobtn a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	text-decoration:none;
+	position:relative;
+	z-index:1;
+	
+}
+
+
+.formulariobtn a::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 200px;
+    width: 130%;
+    height: 170%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    color: white;
+    z-index: -1;
+}
+
+.formulariobtn>label{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	position:relative;
+	z-index:1;
+	
+}
+
+.formulariobtn>label::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 200px;
+    width: 130%;
+    height: 120%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    color: white;
+    z-index: -1;
+}
+
+.formulariobtn:hover label::before {
+    left: -60px;
+    top: -2px;
+    width: 270%;
+    z-index: -1;
+}
+
+
+.servicioPremium .formulariobtn a::before{
+    top: -9px;
+    left: 580px;
+    width: 100%;
+    height: 200%;
+	
+	
+}
+
+
+.formulariobtn:hover a::before {
+    left: -82px;
+    top: -7px;
+    width: 480%;
+    z-index: -1;
+}
+.servicioPremium .formulariobtn:hover a::before {
+    left: -340px;
+    top: -9px;
+    width: 400%;
+    z-index: -1;
+}
+
+
+.familiaNumerosa>div{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.familiaNumerosa>label{
+	padding-bottom:8px;
+}
+
+.familiaNumerosa form{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+
+}
+
+.familiaNumerosa form label{
+	margin-right:8px;
+
+}
+
+.familiaNumerosa form button{
+	margin-left:8px;
+
+}
+
+.familiaNumerosa{
+	text-align:left;
+	display: flex;
+    flex-direction: column;
+}
+.mensajeCorrecto{
+	color:green;
+	position: relative;
+    top: 16px;
+}
+
+.mensajeError{
+	color:red;
+	position: relative;
+    top: 16px;
+}
+
+
+/* TITULO */
+.noeliaTitulo{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+
+.noeliaTitulo p {
+  text-align: left;
+}
+
+.noeliaTitulo p{
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+}
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 35px;
+}
+
+
+@media(max-width:764px){
+	.familiaNumerosa form{
+		display: flex;
+	    flex-direction: column;
+	    justify-content:center;
+	    gap:16px;
+
+	}
+	
+	.tablaMovimientos{
+		 display: flex;
+	    flex-direction: column;
+	  
+	   
+	}
+	
+	.familiaNumerosa>div {
+
+    flex-direction: column;
+}
+}

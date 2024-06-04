@@ -1,0 +1,171 @@
+.SeleccionarCategoria {
+    color: black; 
+    font-size: 64px; 
+    font-family: 'Rancho'; 
+    font-weight: 400; 
+    line-height: 89.60px; 
+    word-wrap: break-word;
+    width: 100%; 
+    text-align: center;
+    margin-bottom: 101px; 
+}
+
+.SeleccionarCategoria h2 {
+    font-family: var(--letra-tipo-tituloPrincipal);
+    font-size: var(--tamaño-letra-tituloPrincipal);
+    line-height: var(--altura-linia-tituloPrincipal);
+    background-image: var(--color-hover-gradiente);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+.Categorias {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 392px 115px 392px 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 0 10%;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.Frutas, .Verduras, .Otros, .Promociones {
+    width: 393px; 
+    height: 392px; 
+    padding: 7px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 48px;
+    font-family: 'Mukta Vaani';
+    font-weight: 400;
+    line-height: 67.20px;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.Frutas {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-image: url('/css/imagenes/categorias/Frutas.png');
+
+}
+
+.Verduras {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    background-image: url('/css/imagenes/categorias/Verduras.png');
+
+}
+
+.Otros {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+    background-image: url('/css/imagenes/categorias/Otros.png');
+
+}
+
+.Promociones {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+    background-image: url('/css/imagenes/categorias/Promociones.png');
+
+}
+
+.Frutas:hover, .Verduras:hover, .Otros:hover, .Promociones:hover {
+    transform: scale(1.05);  
+}
+
+.mensajeRespuesta{
+	width:100%;
+	text-align:center;
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-targeta);
+	margin-bottom: 32px;
+}
+
+.mensajeCorrecto{
+	color:green;
+}
+
+.mensajeError{
+	color:red;
+}
+    
+
+/*----------------------------------------Mobile-------------------------------------------------*/
+@media (max-width: 830px) {
+	 .Categorias {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+    .Categorias > * {
+    margin-bottom: 32px; 
+}
+
+
+}
+@media (max-width: 650px) {
+    .SeleccionarCategoria {
+        font-size: 32px; 
+        line-height: 44px;
+        margin-bottom: 0; 
+    }
+
+    .Frutas, .Verduras, .Otros, .Promociones {
+        width: 318px;
+        height: 317px;
+        margin-top: 47px; 
+        margin-left: 28px;
+        margin-right: 29px;
+        padding: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        line-height: 35px;
+        transition: transform 0.3s ease;
+    }
+
+    .Frutas {
+        background-image: url('../css/imagenes/categorias/FrutasMobile.png');
+    }
+    .Verduras {
+        background-image: url('../css/imagenes/categorias/VerdurasMobile.png');
+    }
+
+    .Otros {
+        background-image: url('../css/imagenes/categorias/VariosMobile.png');
+    }
+
+    .Promociones {
+        background-image: url('../css/imagenes/categorias/PromocionesMobile.png');
+    }
+
+    .Frutas:hover, .Verduras:hover, .Otros:hover, .Promociones:hover {
+        transform: scale(1.05);
+        z-index: 2; 
+    }
+}
+
+@media (max-width: 560px) {
+    .SeleccionarCategoria h2 {
+        font-size: var(--tamaño-letra-tituloSecundario);
+        line-height: var(--altura-linia-tituloSecundario);
+    }
+}

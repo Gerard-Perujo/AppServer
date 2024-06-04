@@ -1,0 +1,205 @@
+/*SECIONES*/
+.contenedorPrincipal{
+	padding: 0!important;
+}
+.contenedorTarjetaDirecciones{
+	display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    align-items: center;
+    font-family: var(--letra-tipo-targeta);
+    font-size: var(	--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto);
+    row-gap: 50px;  
+}
+
+
+
+/* TITULO */
+.noeliaCabecera{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+
+.noeliaTitulo p {
+  text-align: left;
+}
+
+.noeliaTitulo p{
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+}
+
+
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 25px;
+}
+
+
+
+/*TARJETAS*/
+.tarjetasDirecciones{
+	padding: 16px;
+    margin: 16px;
+    height: 280px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    position:relative;
+}
+
+.tarjetasDirecciones::before{
+	content:'';
+	position:absolute;
+    /*box-shadow: var(--sombra-inputs);*/
+    border: 4px solid #D4DEB8;
+    border-radius:20px;
+    height: 280px;
+    width: 280px;
+    top: 0;
+    left: 0;
+     transition: all 0.8s cubic-bezier(.645,.045,.355,1);
+     z-index:-1;
+}
+
+.tarjetasDirecciones:hover::before{
+  height: calc(100% + 50px);
+  background-color: var(--color-verde-claro-transparente);
+   
+}
+
+.tarjetasDirecciones>div{
+	margin-bottom:8px;
+}
+
+.tarjetasDirecciones>div>div:first-child{
+	margin-right:8px;
+}
+
+.calleNumero{
+	display:flex;
+	justify-content:center;
+}
+
+.pisoPuerta{
+	display:flex;
+	justify-content:center;
+}
+
+
+.viviendapoblacion{
+	display:flex;
+	justify-content:center;
+}
+.provinciaPais{
+		display:flex;
+	justify-content:center;
+}
+
+.informacion label{
+	text-decoration:underline;
+}
+
+.calleNumero label{
+	font-weight:800;
+}
+
+.piso, .puerta, .vivienda {
+    font-weight: 800;
+     margin: 0 4px;
+}
+.poblacion, .provincia, .pais {
+    font-weight: 800;
+}
+
+/*BOTONES*/
+
+/*BOTÓN EDITAR*/
+.editar button {
+    padding: 4px 70px;
+}
+.cancelar button {
+    padding: 2px 40px;
+}
+
+
+/*BOTÓN CANCELAR*/
+.cancelar{
+	position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all 0.8s cubic-bezier(.645,.045,.355,1);
+     opacity: 0;
+  	visibility: hidden;
+}
+
+.tarjetasDirecciones:hover .cancelar{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*BOTÓN AÑADIR*/
+.añadir{
+	padding-top: 72px;
+	margin: 0 16px;
+}
+
+.añadir button{
+	padding: 8px 16px 8px 16px;
+    border-radius: 6px;
+    color: var(--color-texto-blanco);
+    background: var(--color-naranga-boton);
+    border: none;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+.añadir button a{
+	font-family: var(--letra-tipo-tituloTargeta);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.añadir button a::before{
+	 content: '';
+    position: absolute;
+    top: -9px;
+    left: 560px;
+    width: 130%;
+    height: 190%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    color: white;
+    z-index: -1;
+}
+
+.añadir button:hover a::before{
+	left: -430px;
+    top: -9px;
+    width: 750%;
+    z-index: -1;
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/footer.css">
+    <link rel="stylesheet"  href="/css/header.css">
+    <link rel="stylesheet"  href="/css/NormaEnvio.css">
+</head>
+<body>
+	<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+<header>
+	<div class="FondoHeader1">
+		<img src="/css/imagenes/Varias/fondo2.jpg">
+	</div>
+	<div class="FondoHeader2">
+		<img src="/css/imagenes/Varias/presentacion2.png">
+	</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+	<div class="gerardContenedorDeskop">
+		<div class="gerardPreHeaderDeskop">
+			<div class="gerardBenvenido">
+			<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+		</div>
+		<div class="gerardCerrarSession">
+				<span  sec:authorize="isAuthenticated()">
+					<a th:href="@{/cerrar}">Cerrar Session
+						<i class="fa-solid fa-right-from-bracket"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="gerardContenedorNavegador">
+			<div class="gerardContenedorWidth">
+				<div class="gerardNavegadorGrande">
+					<div class="gerardContenidoDesckop">
+						<div class="gerardContenedorLogo">
+							<a th:href="@{/}"><img src="/css/imagenes/Varias/logo.png"></a>
+						</div>
+						<ul>
+							<li><a th:href="@{/tienda}">Tienda</a></li>
+							<li><a th:href="@{/promociones}">Promociones</a></li>
+							<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+							<li><a th:href="@{/contacto}">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gerardNavegadorPequeño">
+					<div class="gerardContNavBotones">
+						<a th:href="@{/signup}">
+						<button id="pulsar2" class="gerardRegistro" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user-plus"></i>
+						</button></a>
+						<a th:href="@{/login}">
+						<button id="pulsar3" class="gerardLogin" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user"></i>
+						</button></a>
+						<a th:href="@{/carro}">
+						<button id="pulsar1" class="gerardCesta" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-basket-shopping"></i>
+						</button></a>
+						<a th:href="@{/usuario}">
+						<button id="pulsar4" class="MiUsuario" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-house-user"></i>
+						</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gerardContenedorMobil">
+		<div id="fondoNegro"></div>
+		<div class="gerardContenedorLogoMobil">
+			<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+			<div class="gerardMenuMobilActivo">
+				<div id="btnCerrarMovil" class="gerardCerrarMobil">
+					<button>.</button>
+				</div>
+				<div class="gerardContenedorLogoActivo">
+					<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+				</div>
+				<div class="gerardContenedorOpciones">
+				<div class="UsuarioMovil">
+				<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+				</div>
+					<ul class="gerardlistaOpciones">
+						<li><p>Mi Usuario</p>
+							<ol class="gerardOpcinesUsuario" sec:authorize="isAuthenticated()">
+								<li><a th:href="@{/usuario}">Datos Personales</a></li>
+								<li><a th:href="@{/pedidos}">Mis Pedidos</a></li>
+								<li><a th:href="@{/favoritos}">Productos Favoritos</a></li>
+								<li><a th:href="@{/direcciones}">Direcciones</a></li>
+								<li><a th:href="@{/pagos}">Metodos de Pago</a></li>
+								<li><a th:href="@{/club}">Peco Club</a></li>
+								<li><a th:href="@{/comentario}">Mis Comentarios</a></li>
+							</ol>
+						</li>
+						<li><p>Tienda</p>
+							<ul class="gerardOpcionesTienda">
+								<li><a th:href="@{/frutas}">Frutas</a></li>
+								<li><a th:href="@{/verduras}">Verduras</a></li>
+								<li><a th:href="@{/productos}">Productos Varios</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/promociones}">Promociones</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contacto</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Session</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/signup}">Registrar</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/cerrar}">Cerrar Session</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="gerardCestaHamburgesa">
+			<div class="gerardCestaMobil">
+				<a th:href="@{/carro}" sec:authorize="isAuthenticated()"><i class="fa-solid fa-basket-shopping"></i></a>
+			</div>
+			<div class="gerardContenedorbtnHamburgesa">
+				<button id="btnMovil" class="btnHamburgesa">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+    <div class="gerardContenedorNormas">
+        <div class="NormasTitulo">
+            <h2><span>Términos</span> y Condiciones</h2>
+        </div>
+        <div class="ContenidoNormas">
+            <p>
+            Las presentes Condiciones Generales de Contratación (en adelante referidas indistintamente como “Condiciones Generales” o “Condiciones”), regulan los derechos y obligaciones derivados de las transacciones comerciales realizadas (en adelante el “Sitio web”) del cual es titular la sociedad Disfrutismo, S.L. (en adelante referida indistintamente como “Peco Frutas y Verduras” o, “nosotros” o la “empresa”), y conjuntamente con las condiciones del Aviso Legal y las políticas de privacidad, configuran el contrato marco que todos los usuarios que accedan al Sitio web deben conocer, entender y a aceptar.
+			A los efectos únicamente de las presentes Condiciones Generales, los términos utilizados en plural o singular de “Usted”, “Usuario” o “Cliente”, comprende cualquier persona que acceda al Sitio Web y que haga uso, navegue y/o contrate cualquiera de los productos y servicios ofertados.
+			Peco Frutas y Verduras se reserva el derecho a modificar, total o parcialmente, estas Condiciones Generales, siendo de aplicación las nuevas que acuerde desde el momento de su publicación en el Sitio web. Por ello, es conveniente que lea atentamente las Condiciones Generales antes de proceder a realizar una solicitud de pedido. En cualquier caso, las citadas modificaciones no tendrán efectos retroactivos sobre los productos y servicios previamente contratados.
+			1.    Identificación El Sitio web es titularidad de la empresa Disfrutismo, S.L., provista de NIF B-63504575, domiciliada en C/ Tuset 10, 2º-4ª, 08006 Barcelona, e inscrita en el Registro Mercantil de Barcelona, en el Tomo 36.554, Folio 108, Hoja B-293.533, Inscripción: 1.Cualquier comunicación se podrá dirigir al domicilio social indicado, al teléfono (+34) 932.414.210 o la dirección de correo electrónico info@disfrutaverdura.com. 1.1 Registro sanitario de empresas alimentariasEl Registro General Sanitario de Empresas Alimentarias y Alimentos (RGSEAA) es una base de datos de carácter informativo, gestionada por la Agencia Española de Seguridad Alimentaria y Nutrición (AESAN), cuya finalidad es la protección de la salud pública y de los intereses de los consumidores.
+			2.  Actividad
+			Peco Frutas y Verduras realiza la actividad online a través del Sitio web, ofreciendo productos frescos de calidad de origen agrícola y pecuario, enfocada mayormente al sector hortofrutícola, caracterizados por ser de agricultura ecológica y tradicional.
+			En la oferta de frutas y verduras, existe la posibilidad de contratar el producto en formato “cesta”, lo cual incluiría una variedad de aquellas según el peso y tamaño elegido por el Cliente.
+			Estas cestas están formadas por productos de agricultura ecológica y productos de agricultura tradicional, cuando los primeros no cumplen los estándares de calidad deseados. En estos casos, siempre se advierte de forma clara y suficiente al Cliente mediante la información de ficha de cada producto, antes de la contratación, cuales son productos provenientes de agricultura ecológica y cuales son de agricultura tradicional.
+			3. Contenidos e información suministrada en el Sitio web
+			3.1 Peco Frutas y Verduras se reserva el derecho a modificar la oferta comercial presentada en el Sitio web (modificaciones sobre productos, precios, promociones y otras condiciones comerciales y de servicio) en cualquier momento. Estas modificaciones no van afectar a los pedidos que se realicen con anterioridad. Peco Frutas y Verduras hace todos los esfuerzos dentro de sus medios para ofrecer la información contenida en el Sitio web de forma veraz y sin errores tipográficos. En el caso que en algún momento se produjera algún error de este tipo, ajeno en todo momento a la voluntad de Peco Frutas y Verduras, se procedería inmediatamente a su corrección. 
+			3.2 Peco Frutas y Verduras se esfuerza en todo momento por prestar una información completa, veraz y lícita, y de que los contenidos del Sitio web sirvan para que el usuario tome decisiones de compra plenamente conscientes e informadas.
+			3.3 La referencia a productos ecológicos deriva de aquellos que obtenemos de nuestra huerta certificada y de los que nos proporcionan nuestros agricultores amigos, localizados en diferentes sitios de España. Hemos verificado que aquellos cumplen los estándares de calidad y que están certificados ante la autoridad autonómica de control respectiva. Cuidamos la calidad de nuestros productos tanto como la selección de aquellos proveedores que nos los proporcionan.
+			 
+			4. Productos
+			4.1. Cada semana los contenidos de nuestras cestas van cambiando, incluyen: verduras para hervir, hortalizas para ensalada y/o diferentes tipos de frutas. Usted puede consultar semanalmente en nuestro blog o en nuestra web los contenidos de las cajas de cada semana.
+			4.2. La huerta de Disfruta & Verdura es ecológica certificada y la gran mayoría de nuestros agricultores amigos también lo son. Aun así, los productos que contienen nuestras cajas no son siempre ecológicos, cuando los productos ecológicos no cumplen nuestros estándares de calidad (bien porque el punto de maduración no es el adecuado, o el sabor no es bueno) los sustituimos por otros de agricultura ecológica o de agricultura convencional.
+			El plazo de vigencia de las  promociones de las cestas de temporada són validas desde 16/10/2023 a 31/10/2023.
+			Cada semana informamos en nuestra web las frutas y verduras que incluimos en nuestras cestas, con la información del tipo de agricultura, ecológica o convencional y de la comunidad autónoma de su procedencia. 
+			4.3. Las cestas de fruta y verdura recién cosechada se preparan a diario en el almacén ubicado en nuestra huerta de Tarragona y desde allí se envían directamente a dirección de entrega informada. Nuestra huerta es muy extensa pero lógicamente no produce de todo. Contamos con una red de agricultores amigos de todo el país que nos ayudan a tener una oferta rica y variada. La fruta y verdura que servimos se produce exclusivamente en España. Trabajamos en especial con productores de Andalucía, Aragón, Asturias, Castilla La Mancha, Canarias, Castilla y León, Cataluña, Extremadura, Murcia y Valencia. Gracias a ellos podemos decir que ofrecemos lo mejor de cada huerta.
+			 Cuando los productos ecológicos de nuestros agricultores amigos no cumplen nuestros estándares de calidad los sustituimos por otros procedentes de agricultura ecológica o agricultura convencional.
+			Todos nuestros productos están cosechados en España, excepto las naranjas que en verano son de contrastación.
+			4.4. Además, facilitamos la información correspondiente a alimentos que según RIAC pueden provocar alergia o intolerancia: “Puede contener trazos de apio, frutos secos, huevo y leche”.
+			 
+			5. Sistema de contratación y modalidades de pedidos
+			Los usuarios tienen la posibilidad de realizar todos sus pedidos mediante contratación electrónica desde el Sitio web y alternativamente por teléfono.
+			Existen dos tipologías de pedidos: los puntuales y los pedidos de suscripción (con frecuencia semanal, quincenal, mensual). Los pedidos de suscripción permiten al usuario recibir de manera periódica los productos contratados y obtener condiciones ventajosas en el precio.
+			La contratación de nuestros productos a través de nuestro Sitio web es fácil e intuitiva, e indicamos en todo momento los pasos que deberán seguirse, mediante un menú que se muestra en la parte superior de la página en la que esté navegando.
+			Primero se debe elegir el tipo de cesta dentro de una amplia variedad, según el número de personas, tamaño o productos. Una vez elegida la cesta, puedes configurarla a tu gusto. Esto significa que, si algún producto de tu cesta no te gusta, tienes la posibilidad de cambiarlo por otro producto dentro de las opciones que te damos. Puedes hacer hasta 6 cambios.
+			Descubre el origen de tus productos: se te facilita información completa acerca de cada uno de los productos frescos que conforman tu cesta de la semana, su origen, propiedades, características, etc.
+			Elige la frecuencia de envío, semanal, quincenal o mensual, o un envío puntual, según tus necesidades, y completa tu pedido con productos ecológicos: añade carne, huevos, lácteos, aceite u otros productos de nuestra despensa y te ahorrarás sus gastos de envío.
+			Por último, confirma tu pedido, una vez añadido al carrito de compra, podrás finalizarlo introduciendo los datos requeridos para facturación y entrega, e incluso crear una cuenta para sucesivos pedidos. Cuando termine, facilitaremos un resumen de los productos elegidos, su precio unitario, gastos de envío y el total a pagar. Antes de realizar el pedido se deberá elegir la forma de pago, introducir cualquier código descuento en caso de aplicar  y aceptar las Condiciones Generales y políticas de privacidad, siempre antes de realizarse el pago.
+			El importe total se facilita desglosado. En los precios de nuestros productos están incluidos todos los impuestos. Los gastos de envío se calcularán en función de las características de los productos de cada pedido y del código postal de entrega. Si se quiere descargar la factura en formato electrónico o imprimir la factura del pedido, dicha factura estará disponible en el Área cliente del consumidor, en el apartado  de "Historial de sus pedidos" o también puedes solicitarla por correo electrónico enviando un mensaje a info@disfrutaverdura.com. 
+			Durante todo el proceso de contratación, se facilitan los pasos necesarios que deberá realizar para la contratación definitiva, pudiendo en cualquier momento regresar a la pantalla anterior si desea corregir la información o realizar un cambio en las opciones escogidas.
+			La solicitud de pedido se entenderá formalizada desde el momento en que usted marca la opción de “He leído y acepto las Condiciones Generales y políticas de privacidad” o mención similar, y envía su solicitud a través del botón dispuesto para ello, y se considerará que entiende y acepta plenamente y sin reservas las presentes Condiciones Generales, existiendo desde ese momento un contrato válido y eficaz que vincula a las partes.
+			Una vez efectuada la solicitud de pedido y en el plazo más breve posible, siempre antes de que transcurran 24 horas desde la formalización de la compra, Peco Frutas y Verduras le confirmará mediante un correo electrónico la recepción y registro de su pedido. Es muy importante asegurarse de informar en el formulario de recogida de datos una dirección de correo electrónico válida, así como un número de teléfono de contacto para el caso de que haya alguna incidencia y aquel no funcione.
+			 
+			6. Métodos de pago
+			6.1. Al gestionar el pedido, el Cliente puede elegir libremente abonar las compras que realice mediante tarjeta de crédito o débito (MasterCard, Visa, Visa Electrón,...), o domiciliación bancaria (solo para clientes con suscripción). En determinados casos y para prevenir posibles fraudes, Peco Frutas y Verduras se reserva la posibilidad de solicitar a un Cliente una forma de pago concreta en el caso de que no se acredite fehacientemente la identidad del comprador.
+			Para pagos mediante domiciliación bancaria, se deberá de informar del IBAN y número de cuenta.
+			6.2. Para pagos mediante tarjeta, todos los pagos se realizan de forma segura a través de la plataforma del banco. Para su seguridad Peco Frutas y Verduras ha confiado en el sistema de pago mediante tarjeta de crédito a una pasarela de pagos. Los datos bancarios introducidos son encriptados y transmitidos de forma segura a los servidores de la entidad bancaria y, posteriormente, son verificados con el banco emisor para evitar posibles fraudes y abusos.
+			El Sitio web utiliza técnicas de seguridad de la información generalmente aceptada en la industria, tales como firewalls, procedimientos de control de acceso y mecanismos criptográficos, todo ello con el objeto de evitar el acceso no autorizado de datos. Para lograr estos fines, el usuario acepta que el prestador obtenga datos para efecto de la correspondiente autenticación de los controles de acceso.
+			Este procedimiento de introducción de datos está garantizado por la tecnología de encriptación SSL (Secure Socket Layer) -128 bits, uno de los sistemas de protección más avanzados y eficaces actualmente disponibles, gracias al cual, ningún tercero tendrá acceso vía Internet a esta información relativa a los datos bancarios introducidos por el Cliente.
+			Solo el Banco tiene acceso a los datos bancarios vinculados a estos medios de pago, de manera que Peco Frutas y Verduras no conoce ni registra estos datos durante la operación de pago ni en cualquier otro momento.
+			 
+			7. Forma, gastos y plazo de envío
+			7.1. Peco Frutas y Verduras da la opción, antes de contratar, de escoger la opción de entrega que se adapte mejor al Cliente y en función del servicio en su código postal. Peco Frutas y Verduras entregará el pedido en el plazo especificado durante el proceso de contratación.
+			Peco Frutas y Verduras solicitará al usuario que elija el lugar de la entrega, debiendo especificar su domicilio, oficina o centro donde quiere que se le entregue el producto, además del teléfono de contacto en el caso de que hubiera alguna incidencia con la entrega o el transportista. Por motivos de seguridad no se entregarán pedidos en edificios públicos, hospitales o cualquier recinto en el que se deba entregar el producto adquirido a persona distinta del Cliente.
+			7.2.Los gastos de entrega no están indicados en el precio de los productos, corren a cuenta del Cliente y se añaden al total del importe del pedido. Los gastos de entrega serán informados previa contratación y variarán según el código postal informado.
+			7.3.La zona de entrega cubierta por Peco Frutas y Verduras es toda España a excepción de las Islas Canarias, Islas Baleares, Ceuta y Melilla.
+			7.4. Cada entrega se considera efectuada a partir de la puesta a disposición del producto por parte del transportista al Cliente en el lugar señalado por él durante el proceso de compra.
+			 
+			8. Política de devoluciones y derecho de desistimiento
+			8.1. Derecho de desistimiento
+			El Cliente tiene derecho a ejercer el desistimiento de su compra dentro de los 14 días naturales posteriores a la entrega de los productos, salvo que apliquen excepciones de las previstas en la normativa vigente de consumo.
+			Conforme a aquella, el derecho de desistimiento no aplica para la contratación de los productos que sean perecederos, como las frutas, hortalizas, carne, huevos, etc. Para aquellos productos no perecederos, aplicará el plazo de desistimiento de 14 días naturales previsto para contrataciones a distancia.
+			No es habitual la oferta de productos no perecederos en el Sitio web de Peco Frutas y Verduras, pero a modo de ejemplo, entran dentro de esta categoría, entre otros: Aceite de oliva, vinagre o miel.
+			De acuerdo con la normativa de consumo, el derecho de desistimiento no aplicará a contratos que se refieran a, entre otras excepciones:
+			El suministro de bienes confeccionados conforme a las especificaciones del consumidor y usuario o claramente personalizados.
+			El suministro de bienes que puedan deteriorarse o caducar con rapidez.
+			El suministro de bienes precintados que no sean aptos para ser devueltos por razones de protección de la salud o de higiene y que hayan sido desprecintados tras la entrega.
+			El suministro de bienes que después de su entrega y teniendo en cuenta su naturaleza se hayan mezclado de forma indisociable con otros bienes.
+			El desistimiento implicará que usted, a partir de la efectiva posesión del producto, tiene 14 días naturales para notificarnos su decisión de desistir del contrato a través de una declaración inequívoca, como, por ejemplo, enviando una comunicación vía e-mail a info@disfrutaverdura.com, o por correo postal, o bien rellenado el modelo de formulario de desistimiento que figura como anexo a estas Condiciones.
+			Una vez finalizado el plazo de 14 días naturales, Peco Frutas y Verduras no aceptará devoluciones por desistimiento de compras de Producto.
+			Para devolver el producto, el Cliente podrá hacerlo de dos formas: 
+			Contactando con Peco Frutas y Verduras directamente para que gestione la recogida y devolución del producto, siempre con cargo al Cliente los gastos de devolución (5€). En este caso, se programará la recogida de los Productos y se informará al Cliente por email de la fecha y horario en la que se producirá dicha recogida.
+			O bien el Cliente puede devolver los productos a su cargo sin utilizar el sistema de Peco Frutas y Verduras. No obstante, Peco Frutas y Verduras aconseja empaquetar cuidadosamente el producto (no utilizar el embalaje original podría depreciar el producto) y escoger un servicio de transporte con acuse de recibo. Disfruta& Verdura rechazará cualquier producto devuelto con gastos a contra reembolso a cargo de la empresa y no se hará cargo en caso de que el producto no llegue a sus dependencias.
+			No se permite la devolución de bienes precintados que no sean aptos para ser devueltos por razones de protección de la salud y que hayan sido desprecintados tras la entrega.
+			 
+			8.2. Reembolso
+			En caso de desistimiento, el Cliente tendrá derecho al reembolso del precio de los productos devueltos, además de los gastos de envío ordinarios, siempre que los productos devueltos estén en las mismas condiciones en que fueron entregados, no hayan sido usados (salvo lo necesario para verificar su uso y adecuación con lo esperado), dañados, desprecintados (en los casos previamente indicados).
+			Disfruta & Verdura devolverá al Cliente el coste del producto y los gastos de envío proporcionales una vez descontados los gastos de devolución siempre y cuando use los Servicios de Disfruta y Verdura y no lo envíe por sus propios medios. 
+			Derecho de desistimiento: Tiene usted derecho a desistir del presente contrato en un plazo de catorce días naturales sin necesidad de justificación. El plazo de desistimiento expirará a los catorce días naturales del día que usted o un tercero por usted indicado, distinto del transportista, adquirió la posesión material de los bienes. Para ejercer el derecho de desistimiento, deberá usted notificarnos (indica el nombre de tue empresa, dirección completa, número de teléfono y dirección de correo electrónico) su decisión de desistir del contrato a través de una declaración inequívoca (por ejemplo, una carta enviada por correo postal o correo electrónico).
+			Podrá utilizar el modelo de formulario de desistimiento que figura a continuación, aunque su uso no es obligatorio (link al formulario de desistimiento). Para cumplir el plazo de desistimiento, basta con que la comunicación relativa al ejercicio por su parte de este derecho sea enviada antes de que venza el plazo correspondiente. Consecuencias del desistimiento: En caso de desistimiento por su parte, le devolveremos todos los pagos recibidos de usted, incluidos los gastos de entrega (con la excepción de los gastos adicionales resultantes de la elección por su parte de una modalidad de entrega diferente a la modalidad menos costosa de entrega ordinaria que ofrezcamos) sin ninguna demora indebida y, en todo caso, a más tardar 14 días naturales a partir de la fecha en la que se nos informe de su decisión de desistir del presente contrato. Procederemos a efectuar dicho reembolso utilizando el mismo medio de pago empleado por usted para la transacción inicial, a no ser que haya usted dispuesto expresamente lo contrario; en todo caso, no incurrirá en ningún gasto como consecuencia del reembolso. Podremos retener el reembolso hasta haber recibido los bienes, o hasta que usted haya presentado una prueba de la devolución de los mismos, según qué condición se cumpla primero".
+			Deberá devolvernos o entregarnos directamente los bienes a (insertar el nombre y el domicilio empresa, si procede, de la persona autorizada por usted a recibir los bienes), sin ninguna demora indebida y, en cualquier caso, a más tardar en el plazo de 14 días naturales a partir de la fecha en que nos comunique su decisión de desistimiento del contrato. Se considerará cumplido el plazo si efectúa la devolución de los bienes antes de que haya concluido dicho plazo. Deberá usted asumir el coste directo de devolución de los bienes. Solo será usted responsable de la disminución de valor de los bienes resultante de una manipulación distinta a la necesaria para establecer la naturaleza, las características y el funcionamiento de los bienes".
+			En caso de un contrato para la prestación de servicios insértese lo siguiente: "Si usted ha solicitado que la prestación de servicios dé comienzo durante el período de desistimiento, nos abonará un importe proporcional a la parte ya prestada del servicio en el momento en que nos haya comunicado su desistimiento, en relación con el objeto total del contrato
+			8.3. Devoluciones por falta de conformidad 
+			En caso de que los productos estén en mal estado o no se correspondan con los que efectivamente se han contratado, el Cliente comunicará a Peco Frutas y Verduras de forma inmediata por medio de correo electrónico info@disfrutaverdura.com o por teléfono al 932.414.210, su deseo de ejercitar el derecho de resolución del contrato o la sustitución del producto recibido.
+			El vendedor responderá frente al consumidor de las faltas que se manifiesten durante un plazo de tres años desde la entrega, que se entenderá realizada el día que figure en la factura o tique de compra, o en el albarán si este fuera posterior. Salvo prueba en contrario, se presumirá que las faltas de conformidad que se manifiesten en los dos años siguientes a la entrega del bien ya existían cuando éste se entregó. El consumidor podrá exigir al empresario la subsanación de la falta de conformidad, la reducción del precio o la resolución del contrato, gestiones que serán gratuitas para el consumidor comprendiendo los gastos que sean necesarios para que los bienes sean puestos en conformidad, especialmente los gastos de envío, transporte, mano de obra o materiales.
+			9. Cancelación del pedido
+			La cancelación del pedido por parte del usuario quedará sujeta a la operativa habitual de Peco Frutas y Verduras, siendo necesario informar de la cancelación entre dos y cuatro días previos al día de entrega comprometido.
+			Las cancelaciones efectuadas con posterioridad a este plazo no serán efectivas, y el Cliente deberá de aceptar el pedido.
+			 
+			10. Obligaciones del cliente
+			10.1.El Cliente se compromete en todo momento a facilitar información veraz sobre los datos solicitados en los formularios de registro de usuario o de realización del pedido, y a mantenerlos actualizados en todo momento.
+			10.2.El Cliente se compromete a aceptar todas las disposiciones y condiciones recogidas en las presentes Condiciones Generales entendiendo que recogen la mejor voluntad de servicio posible para el tipo de actividad que desarrolla Peco Frutas y Verduras.
+			10.3. Asimismo, se compromete a guardar de forma confidencial y con la máxima diligencia sus claves de acceso personal al Sitio web.
+			10.4. El Cliente se compromete a posibilitar la entrega del pedido solicitado facilitando una dirección de entrega en la que pueda ser entregado el pedido dentro del horario escogido antes de la contratación, de acuerdo con lo previsto en la cláusula (7) de estas condiciones. En caso de incumplimiento por parte del Cliente de esta obligación, Peco Frutas y Verduras no tendrá ninguna responsabilidad sobre el retraso o imposibilidad de entrega del pedido solicitado por el Cliente.
+			10.5.El Cliente se compromete a hacer efectivo los pagos domiciliados en la modalidad de suscripción y que tiene los fondos suficientes para cubrir todos los costes que resultan de la compra de productos a través del Sitio web. Aquellos Clientes que, previo aviso de impago, no regularicen su situación, podrán ser dados de baja del servicio y requeridos al pago directamente o mediante terceros.
+			10.6. A la hora de realizar un pedido con productos alcohólicos, el cliente se compromete a ser mayor de edad. La venta de productos alcohólicos solo está permitida para mayores de 18 años.
+			 
+			11. Reclamaciones
+			Las reclamaciones deben ir dirigidas a Peco Frutas y Verduras por correo electrónico a . Una vez registrada la solicitud, reclamación o queja por nuestro departamento de atención al Cliente, le informaremos un número de registro de seguimiento para que tenga constancia de aquella.
+			Gestionaremos cualquier solicitud en el menor tiempo posible, manteniendo un nivel de comunicación óptimo en todo momento.
+			 
+			12. Propiedad intelectual
+			Los derechos de propiedad intelectual y/o industrial de los contenidos, textos, comentarios, obras, ilustraciones, imágenes, guías, distintivos corporativos, etc., del Sitio web, son propiedad de Peco Frutas y Verduras y, cuando corresponda, de las entidades o personas indicadas en el Sitio web, estando todos ellos protegidos por el ordenamiento jurídico español y las normas comunitarias e internacionales que resulten aplicables.
+			Salvo autorización previa y por escrito de Peco Frutas y Verduras, así como de los supuestos legalmente permitidos para uso personal y privado, queda terminantemente prohibida la reproducción, distribución, comercialización, transformación, copia, o cualesquiera otros actos de comunicación o difusión, total o parcial, por cualquier medio, de este Sitio web y/o de los contenidos de este, aunque se cite la fuente de procedencia. Toda actuación que contravenga estas previsiones constituirá una infracción de los derechos de propiedad intelectual y/o industrial de Peco Frutas y Verduras o de aquella entidad o persona que sean los titulares.
+			 
+			13. Seguridad, confidencialidad y protección de datos personales
+			13.1. Peco Frutas y Verduras garantiza la seguridad y confidencialidad en todas sus comunicaciones con sus Clientes.
+			Todas las operaciones de pago on-line se realizan a través de un servidor seguro, basado en el estándar SSL, que protege los datos frente a intentos de violación por terceros. Los datos del proceso de compra se guardan en una base de datos diseñada para tal efecto.
+			13.2. De conformidad con lo previsto en el RGPD, los datos personales facilitados serán tratados, por Peco Frutas y Verduras como responsable del tratamiento de estos. Dichos datos serán tratados para dar cumplimiento a los derechos y obligaciones contenidas en este contrato. En consecuencia, la base jurídica del tratamiento es dar cumplimiento a la mencionada relación contractual, siendo dicho fin estrictamente necesario para ejecutar el presente contrato.
+			Los datos se mantendrán mientras esté en vigor la relación contractual y, en todo caso serán conservados durante los plazos legales de prescripción de las responsabilidades nacidas de la relación contractual que vincula a ambas Partes, siendo tratados únicamente por Peco Frutas y Verduras  y aquellos terceros a los que aquélla esté legal o contractualmente obligada a comunicarlos (como es el caso de terceros prestadores de servicios a los que se haya encomendado algún servicio vinculado con la gestión o ejecución del contrato). El Cliente podrá ejercer, en los términos establecidos por la legislación vigente, los derechos de acceso, rectificación y supresión de datos, así como solicitar que se limite el tratamiento de sus datos personales, oponerse al mismo, o solicitar la portabilidad de sus datos dirigiendo una comunicación por escrito a Peco Frutas y Verduras, a través de las direcciones especificadas en la cláusula (1) de estas condiciones. En el supuesto de que no queden satisfechos con la atención recibida tras ejercitar alguno de los derechos citados con anterioridad, se podrá presentar una reclamación ante la Agencia Española de Protección de Datos u otra autoridad competente.
+			Para obtener más información sobre el tratamiento que realiza Peco Frutas y Verduras de los datos personales, consulte nuestras políticas de privacidad.
+			14. Limitación de responsabilidad
+			La responsabilidad de Peco Frutas y Verduras, sus agentes, empleados, subcontratistas y proveedores por las reclamaciones derivadas de la venta de los productos y del cumplimento de sus obligaciones estará limitada al importe del pedido facturado por Peco Frutas y Verduras por los productos sobre los que pueda derivarse responsabilidad, sin perjuicio de aquellas responsabilidades irrenunciables contempladas en la normativa de protección de consumidores y usuarios.
+			 
+			15. Legislación aplicable y jurisdicción competente
+			15.1. Las presentes Condiciones Generales se rigen por la ley española.
+			En caso de controversia o desavenencia que se derive de las presentes Generales y para la resolución de cualesquiera conflictos, Peco Frutas y Verduras y el Cliente acuerdan someterse, a su libre elección, y con renuncia a cualquier otro fuero o jurisdicción al que pudieran tener derecho, a los juzgados y tribunales de la ciudad correspondiente al domicilio del Cliente consumidor.
+			A efectos de las presentes Condiciones Generales se entenderá por "consumidor" la persona que actúe con un propósito ajeno a su actividad comercial, empresarial, oficio o profesión, de conformidad con el Real Decreto Legislativo 1/2007, de 16 de noviembre, por el que se aprueba el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios.
+			15.2. En caso de Cliente no consumidor las Partes acuerdan someterse a los juzgados y tribunales de Barcelona capital.
+			15.3. La Comisión Europea facilita también a los consumidores de la Unión Europea la plataforma de resolución de litigios en línea para resolver los litigios de forma amistosa (artículo 14 apartado 1 Reglamento (UE) 524/2013), accesible en la web http://ec.europa.eu/odr.
+			 
+			16. Entidad adherida a Confianza Online
+			“Nuestra entidad se encuentra adherida a Confianza Online (Asociación sin ánimo de lucro), inscrita en el Registro Nacional de Asociaciones Grupo 1, Sección 1, número nacional 594400, CIF G85804011, Carrera de San Jerónimo, 18, 4º 1, 28014 Madrid (España). Para más información: www.confianzaonline.es.
+			Estas Condiciones Generales se rigen por la ley española. Así mismo, en cumplimiento de lo dispuesto en la Ley de Resolución Alternativa de Litigios, informamos a los consumidores que, como entidad adherida y en los términos del Código de Conducta los usuarios podrán acudir a Confianza Online para la resolución alternativa de eventuales controversias (https://www.confianzaonline.es/como-reclamar/formulario-de-reclamaciones/). Si éstas se refieren a transacciones electrónicas con consumidores, o sobre protección de datos cuando estén relacionadas con este ámbito, las reclamaciones serán resueltas por el Comité de Mediación de Confianza Online, acreditado para la resolución alternativa de litigios en materia de consumo. Si las reclamaciones versan sobre publicidad digital, o sobre protección de datos relacionada con este ámbito, serán sometidas al Jurado de la Publicidad de AUTOCONTROL.
+			Además te recordamos que puedes acceder a la plataforma de resolución de litigios en línea de la Unión Europea siguiendo este enlace: https://ec.europa.eu/consumers/odr/main/?event=main.home2.show”.
+			 
+			 
+			 
+			Condiciones actualizadas a 2 de Diciembre de 2022
+			 
+			Ten en cuenta que de acuerdo con la normativa de consumo, el derecho de desistimiento no aplicará a contratos que se refieran a:
+			El suministro de bienes confeccionados conforme a las especificaciones del consumidor y usuario o claramente personalizados.
+			El suministro de bienes que puedan deteriorarse o caducar con rapidez.
+			El suministro de bienes precintados que no sean aptos para ser devueltos por razones de protección de la salud o de higiene y que hayan sido desprecintados tras la entrega.
+			El suministro de bienes que después de su entrega y teniendo en cuenta su naturaleza se hayan mezclado de forma indisociable con otros bienes.
+			Si deseas más información sobre la devolución y cancelación de tu compra puedes consultarlo en nuestras condiciones generales de contratación
+			FORMULARIO DESISTIMIENTO
+			(Sólo debe cumplimentar y enviar el presente formulario si desea desistir del contrato)
+			A la atención de DISFRUTISMO S.L., con sede a C/ Tuset, 10, 08006 Barcelona, con el email:  hola@disfrutaverdura.com -->
+			Principio del formulario
+			Por la presente le comunico que desisto de mi contrato de venta del siguiente servicio:
+			- Pedido el ________________________________________, recibido el _______________________________________________ 
+			- Nombre completo del consumidor y usuario _________________________________________________________________
+			- Domicilio del consumidor y usuario  _________________________________________________________________________
+			- Firma del consumidor y usuario (solo si el presente formulario se presenta en papel)
+            
+            </p>
+        </div>
+    </div>
+</section>
+<footer>
+	<div class=gerardContenedorFooter>
+		<div >
+			<ul class=gerardContendorContacto>
+				<li>Contacto:</li>
+				<li>Avenida Felipe VI 326</li>
+				<li>infoPeco@gmail.com</li>
+				<li>Telf: 615498758</li>
+			</ul>
+		</div>
+		<div >
+			<ul class=gerardContenedorLegal>
+				<li>Legal:</li>
+				<li>
+					<a th:href="@{/politica}">Política de Privacidad</a>
+				</li>
+				<li>
+					<a th:href="@{/NormaEnvio}">Normas de Envío</a>
+				</li>
+				<li>
+					<a th:href="@{/terminos}">Términos y condiciones</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="gerardImagenFooter">
+		<img src="/css/imagenes/Varias/fondoFooter.jpg">
+	</div>
+	<div class="gerardCopyrigth">
+		<div>
+			<p>CopyRigth 
+				<span> <i class="fa-regular fa-copyright"></i></span>
+				2024
+			</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

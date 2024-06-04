@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="/Javascript/slick.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+	<link rel="stylesheet" type="text/css" href="/css/slick.css"/>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/footer.css">
+    <link rel="stylesheet"  href="/css/header.css">
+    <link rel="stylesheet"  href="/css/contacto.css">
+    <link rel="stylesheet"  href="/css/misComentarios.css">
+    <link rel="stylesheet"  href="/css/AreaPersonal.css">
+</head>
+<body>
+	<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+<header>
+	<div class="FondoHeader1">
+		<img src="/css/imagenes/Varias/fondo2.jpg">
+	</div>
+	<div class="FondoHeader2">
+		<img src="/css/imagenes/Varias/presentacion2.png">
+	</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+	<div class="gerardContenedorDeskop">
+		<div class="gerardPreHeaderDeskop">
+			<div class="gerardBenvenido">
+			<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+		</div>
+		<div class="gerardCerrarSession">
+				<span  sec:authorize="isAuthenticated()">
+					<a th:href="@{/cerrar}">Cerrar Session
+						<i class="fa-solid fa-right-from-bracket"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="gerardContenedorNavegador">
+			<div class="gerardContenedorWidth">
+				<div class="gerardNavegadorGrande">
+					<div class="gerardContenidoDesckop">
+						<div class="gerardContenedorLogo">
+							<a th:href="@{/}"><img src="/imagenes/Varias/logo.png"></a>
+						</div>
+						<ul>
+							<li><a th:href="@{/tienda}">Tienda</a></li>
+							<li><a th:href="@{/promociones}">Promociones</a></li>
+							<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+							<li><a th:href="@{/contacto}">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gerardNavegadorPequeño">
+					<div class="gerardContNavBotones">
+						<a th:href="@{/signup}">
+						<button id="pulsar2" class="gerardRegistro" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user-plus"></i>
+						</button></a>
+						<a th:href="@{/login}">
+						<button id="pulsar3" class="gerardLogin" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user"></i>
+						</button></a>
+						<a th:href="@{/carro}">
+						<button id="pulsar1" class="gerardCesta" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-basket-shopping"></i>
+						</button></a>
+						<a th:href="@{/usuario}">
+						<button id="pulsar4" class="MiUsuario" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-house-user"></i>
+						</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gerardContenedorMobil">
+		<div id="fondoNegro"></div>
+		<div class="gerardContenedorLogoMobil">
+			<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+			<div class="gerardMenuMobilActivo">
+				<div id="btnCerrarMovil" class="gerardCerrarMobil">
+					<button>.</button>
+				</div>
+				<div class="gerardContenedorLogoActivo">
+					<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+				</div>
+				<div class="gerardContenedorOpciones">
+				<div class="UsuarioMovil">
+				<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+				</div>
+					<ul class="gerardlistaOpciones">
+						<li sec:authorize="isAuthenticated()"><p>Mi Usuario</p>
+							<ol class="gerardOpcinesUsuario">
+								<li><a th:href="@{/usuario}">Datos Personales</a></li>
+								<li><a th:href="@{/pedidos}">Mis Pedidos</a></li>
+								<li><a th:href="@{/favoritos}">Productos Favoritos</a></li>
+								<li><a th:href="@{/direcciones}">Direcciones</a></li>
+								<li><a th:href="@{/pagos}">Metodos de Pago</a></li>
+								<li><a th:href="@{/club}">Peco Club</a></li>
+								<li><a th:href="@{/comentario}">Mis Comentarios</a></li>
+							</ol>
+						</li>
+						<li><p>Tienda</p>
+							<ul class="gerardOpcionesTienda">
+								<li><a th:href="@{/frutas}">Frutas</a></li>
+								<li><a th:href="@{/verduras}">Verduras</a></li>
+								<li><a th:href="@{/productos}">Productos Varios</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/promociones}">Promociones</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contacto</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Session</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/signup}">Registrar</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/cerrar}">Cerrar Session</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="gerardCestaHamburgesa">
+			<div class="gerardCestaMobil">
+				<a th:href="@{/carro}" sec:authorize="isAuthenticated()"><i class="fa-solid fa-basket-shopping"></i></a>
+			</div>
+			<div class="gerardContenedorbtnHamburgesa">
+				<button id="btnMovil" class="btnHamburgesa">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section>
+ 	<div class="contenedorPrincipal">
+ 		<div class="subContenedorPrincipal">
+	 		<div class="noeliaNavegador">
+		 		<ul>
+	 		<!-- En la lista se tendrán las referencias a una determinada dirección mediante <a> -->
+	 			<!--<li sec:authorize="isAuthenticated()"><p>Mi Area Personal</p>-->
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-house-user"></i>
+		 				<a th:href="@{/usuario}">Mi área personal</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-regular fa-user"></i>
+		 				<a th:href="@{/misDatosPersonales}">Datos personales</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-box"></i>
+		 				<a th:href="@{/misPedidos}">Pedidos</a> 
+		 				<!--<a th:href="@{/misPedidos/{id}(id=${session.usuario.username})}">Pedidos</a>--> 
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-heart"></i>
+		 				<a th:href="@{/misProductosFavoritos}">Productos favoritos</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-location-dot"></i>
+		 				<a th:href="@{/misDirecciones}">Direcciones</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-credit-card"></i>
+		 				<a th:href="@{/misMetodosDePago}">Métodos de pago</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-award"></i>
+		 				<a th:href="@{/pecoClub}">Peco club</a>
+	 				</div>
+	 			</li>
+	 			<li>
+	 				<div>
+		 				<i class="fa-solid fa-comments"></i>
+		 				<a th:href="@{/misComentarios}">Mis comentarios</a>
+	 				</div>
+	 			</li>
+	 		<li sec:authorize="hasAnyRole('ROLE_ADMINISTRADOR')">
+	 				<div>
+		 				<i class="fa-solid fa-pencil"></i>
+		 				<a th:href="@{/agregar/producto}">Añadir Producto</a>
+	 				</div>
+	 			</li>
+	 			<li sec:authorize="hasAnyRole('ROLE_ADMINISTRADOR')">
+	 				<div>
+		 				<i class="fa-solid fa-book-open"></i>
+		 				<a th:href="@{/gestion/producto}">Gestión Producto</a>
+	 				</div>
+	 			</li>
+	 		</ul>
+	 		</div>
+	 		<div class="ContenedorTarjetasComentarios">
+	 			<div class="tituloContenedor">
+	 				<label>Mis Comentarios</label>
+	 			</div>
+	 			<div class="mensajeComentario">
+	 				<i class="fa-regular fa-envelope"></i>
+	 				<label>Aún no has realizado ningún comentario sobre nuestros productos</label>
+	 			</div>
+	 		</div>
+	 	</div>
+ 	</div>
+ </section>
+<footer>
+	<div class=gerardContenedorFooter>
+		<div >
+			<ul class=gerardContendorContacto th:object="${empresa}">
+				<li>Contacto:</li>
+				<li>
+					<span th:text="*{calle}"></span>
+					<span th:text="*{numero}"></span>
+				</li>
+				<li th:text="*{email}"></li>
+				<li th:text="*{telefono}"></li>
+			</ul>
+			</div>
+		<div >
+			<ul class=gerardContenedorLegal >
+				<li>Legal:</li>
+				<li>
+					<a th:href="@{/politica}">Política de Privacidad</a>
+				</li>
+				<li>
+					<a th:href="@{/NormaEnvio}">Normas de Envío</a>
+				</li>
+				<li>
+					<a th:href="@{/terminos}">Términos y condiciones</a>
+				</li>
+			</ul>
+			</div>
+	</div>
+	<div class="gerardImagenFooter">
+		<img src="/css/imagenes/Varias/fondoFooter.jpg">
+	</div>
+	<div class="gerardCopyrigth">
+		<div>
+			<p>CopyRigth 
+				<span> <i class="fa-regular fa-copyright"></i></span>
+				2024
+			</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

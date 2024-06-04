@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+	<!-- en caso de que los iconos no se muestren activar este script que esta comentado y eliminar el otro -->
+	<!-- <script src="https://kit.fontawesome.com/a2dd6045c4.js" crossorigin="anonymous"></script> -->
+	<script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="/Javascript/slick.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+	<link rel="stylesheet" type="text/css" href="/css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/slick-theme.css"/>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/footer.css">
+	<link rel="stylesheet"  href="/css/header.css">
+	<link rel="stylesheet"  href="/css/index.css">
+</head>
+<body>
+	<div class="cursor"></div>
+	 <div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+<header id="imagenHome">
+	<div class="FondoHeader1">
+		<img src="/css/imagenes/Varias/fondo2.jpg">
+	</div>
+	<div class="FondoHeader2">
+		<img src="/css/imagenes/Varias/presentacion2.jpg">
+	</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+	<div class="gerardContenedorDeskop">
+		<div class="gerardPreHeaderDeskop">
+			<div class="gerardBenvenido">
+			<span>Bienvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+		</div>
+		<div class="gerardCerrarSession">
+				<span  sec:authorize="isAuthenticated()">
+					<a th:href="@{/cerrar}">Cerrar Session
+						<i class="fa-solid fa-right-from-bracket"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="gerardContenedorNavegador">
+			<div class="gerardContenedorWidth">
+				<div class="gerardNavegadorGrande">
+					<div class="gerardContenidoDesckop">
+						<div class="gerardContenedorLogo">
+							<a th:href="@{/}"><img src="/css/imagenes/Varias/logo.png"></a>
+						</div>
+						<ul>
+							<li><a th:href="@{/tienda}">Tienda</a></li>
+							<li><a th:href="@{/promociones}">Promociones</a></li>
+							<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+							<li><a th:href="@{/contacto}">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gerardNavegadorPequeño">
+					<div class="gerardContNavBotones">
+						<a th:href="@{/signup}">
+						<button id="pulsar2" class="gerardRegistro" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user-plus"></i>
+						</button></a>
+						<a th:href="@{/login}">
+						<button id="pulsar3" class="gerardLogin" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user"></i>
+						</button></a>
+						<a th:href="@{/carro}">
+						<button id="pulsar1" class="gerardCesta" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-basket-shopping"></i>
+						</button></a>
+						<a th:href="@{/usuario}">
+						<button id="pulsar4" class="MiUsuario" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-house-user"></i>
+						</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gerardContenedorMobil">
+		<div id="fondoNegro"></div>
+		<div class="gerardContenedorLogoMobil">
+			<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+			<div class="gerardMenuMobilActivo">
+				<div id="btnCerrarMovil" class="gerardCerrarMobil">
+					<button>.</button>
+				</div>
+				<div class="gerardContenedorLogoActivo">
+					<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+				</div>
+				<div class="gerardContenedorOpciones">
+				<div class="UsuarioMovil">
+				<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+				</div>
+					<ul class="gerardlistaOpciones">
+						<li ><p>Mi Usuario</p>
+							<ol class="gerardOpcinesUsuario" sec:authorize="isAuthenticated()">
+								<li><a th:href="@{/usuario}" >Datos Personales</a></li>
+								<li><a th:href="@{/pedidos}">Mis Pedidos</a></li>
+								<li><a th:href="@{/favoritos}">Productos Favoritos</a></li>
+								<li><a th:href="@{/direcciones}">Direcciones</a></li>
+								<li><a th:href="@{/pagos}">Metodos de Pago</a></li>
+								<li><a th:href="@{/club}">Peco Club</a></li>
+								<li><a th:href="@{/comentario}">Mis Comentarios</a></li>
+							</ol>
+						</li>
+						<li><p>Tienda</p>
+							<ul class="gerardOpcionesTienda">
+								<li><a th:href="@{/frutas}">Frutas</a></li>
+								<li><a th:href="@{/verduras}">Verduras</a></li>
+								<li><a th:href="@{/productos}">Productos Varios</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/promociones}">Promociones</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contacto</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Session</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/signup}">Registrar</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/cerrar}">Cerrar Session</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="gerardCestaHamburgesa">
+			<div class="gerardCestaMobil">
+				<a th:href="@{/carro}" sec:authorize="isAuthenticated()"><i class="fa-solid fa-basket-shopping"></i></a>
+			</div>
+			<div class="gerardContenedorbtnHamburgesa">
+				<button id="btnMovil" class="btnHamburgesa">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="contenedorTituloIndex">
+		<div class="contenedorTitulo">
+			<div class="titulo">
+				<h1>Peco Frutas y Verduras</h1>
+			</div>
+			<div class="subtitulo">
+				<p>En Peco Frutas y Verduras nos orgullece decir que todos nuestros productos provienen 
+				de agricultores de las cercanías de Madrid para así poder ofrecer a nuestros 
+				clientes los productos más frescos y de Km 0.</p>
+			</div>
+		</div>
+	</div>
+	<div class="contenedorProductos">
+		<div class="contenedorTitulo">
+			<div class="titulo">
+				<h1>Nuestros <span>Productos</span></h1>
+			</div>
+			<div class="subtitulo">
+				<p>Tenemos toda una gran variedad de productos para satisfacer tus necesidades.</p>
+			</div>
+		</div>
+		<div class="TarjetasProductos">
+			<div class="tarjeta">
+				<div class="contenedorImagen">
+					<img src="/css/imagenes/Varias/fondoFruta.jpg">
+				</div>
+				<div class="contenedorDescripcion">
+					<div class="tituloTarjeta">
+						<label>Nuestras Frutas</label>
+					</div>
+					<div class="btnTarjeta">
+						<div>
+							<a th:href="@{/frutas}">Acceder</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tarjeta">
+				<div class="contenedorImagen">
+					<img src="/css/imagenes/Varias/fondoVerdura.jpg">
+				</div>
+				<div class="contenedorDescripcion">
+					<div class="tituloTarjeta">
+						<label>Nuestras Verduras</label>
+					</div>
+					<div class="btnTarjeta">
+						<div>
+							<a th:href="@{/verduras}">Acceder</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tarjeta">
+				<div class="contenedorImagen">
+					<img src="/css/imagenes/Varias/fondoProductos.jpg">
+				</div>
+				<div class="contenedorDescripcion">
+					<div class="tituloTarjeta">
+						<label>Productos Varios</label>
+					</div>
+					<div class="btnTarjeta">
+						<div>
+							<a th:href="@{/productos}">Acceder</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tarjeta">
+				<div class="contenedorImagen">
+					<img src="/css/imagenes/Varias/fondoPromocion.png">
+				</div>
+				<div class="contenedorDescripcion">
+					<div class="tituloTarjeta">
+						<label>Nuestras Promociones</label>
+					</div>
+					<div class="btnTarjeta">
+						<div>
+							<a th:href="@{/promociones}">Acceder</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+		</div>
+		<div class="contenedorBonos">
+			<div class="contenedorTitulo">
+				<div class="titulo">
+					<h1>Nuestros <span>Bonos</span></h1>
+				</div>
+				<div class="subtitulo">
+					<p>Ofrecemos diferentes servicios para quien lo desee o necesite</p>
+				</div>
+			</div>
+			<div class="tarjetasBono">
+				<div class="contenedorTarjeta">
+					<h2>Cliente VIP</h2>
+					<p>Al hacerte cliente VIP tendrás todos los envíos gratuitos, además de recibir
+					 todos los pedidos en menos de 24h, sino te devolveremos el dinero.
+					 Regístrate para poder obtener este servicio</p>
+					 <div class="btnTarjeta" sec:authorize="!isAuthenticated()">
+						<div>
+							<a th:href="@{/signup}">Registrate</a>
+						</div>
+					</div>
+					<div class="btnTarjeta" sec:authorize="isAuthenticated()">
+						<div>
+							<a th:href="@{/pecoClub}">Contrata</a>
+						</div>
+					</div>
+				</div>
+				<div class="contenedorTarjeta">
+					<h2>Familia Numerosa</h2>
+					<p>Ofrecemos descuentos para todas esas familias numerosas, que les cuesta 
+					llegar a fin de mes. Porque queremos que todo el mundo pueda disfrutar de 
+					productos sanos y saludables.
+					Regístrate para poder obtener este servicio.
+					</p>
+					<div class="btnTarjeta" sec:authorize="!isAuthenticated()">
+						<div>
+							<a th:href="@{/signup}">Registrate</a>
+						</div>
+					</div>
+					<div class="btnTarjeta" sec:authorize="isAuthenticated()">
+						<div>
+							<a th:href="@{/pecoClub}">Contrata</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+		<div class="contenedorComentarios">
+			<div class="contenedorTitulo">
+				<div class="titulo">
+					<h1><span>Testimonios</span></h1>
+				</div>
+				<div class="subtitulo">
+					<p>Comentarios de algunos de nuestros clientes haciendo referencia a nuestros productos</p>
+				</div>
+			</div>
+			<div class="tarjetaComentario">
+				<div class="tarjetaOpinion" th:each="opinion : ${comentario}">
+					<div class="fechaImagen">
+						<label th:text="${opinion.fecha}"></label>
+						<div class="imagen">
+							<img th:src="${opinion.producto.imagen}">
+						</div>
+					</div>
+					<div class="contenedorusuario">
+						<label th:text="${opinion.comentario}"></label>
+						<div class="valoracionUsuario">
+							<label th:text="${opinion.usuario.nombre}"></label>
+							<label th:text="${opinion.valoracion} + '/10'"></label>
+						</div>
+						<div class="btnTarjeta">
+							<div>
+								<a th:href="@{/productos/verUno/{id}(id=${opinion.producto.idProductos})}">Ver Producto</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+<footer>
+	<div class=gerardContenedorFooter>
+		<div >
+			<ul class=gerardContendorContacto th:object="${empresa}">
+				<li>Contacto:</li>
+				<li>
+					<span th:text="*{calle}"></span>
+					<span th:text="*{numero}"></span>
+				</li>
+				<li th:text="*{email}"></li>
+				<li th:text="*{telefono}"></li>
+			</ul>
+			</div>
+		<div >
+			<ul class=gerardContenedorLegal >
+				<li>Legal:</li>
+				<li>
+					<a th:href="@{/politica}">Política de Privacidad</a>
+				</li>
+				<li>
+					<a th:href="@{/NormaEnvio}">Normas de Envío</a>
+				</li>
+				<li>
+					<a th:href="@{/terminos}">Términos y condiciones</a>
+				</li>
+			</ul>
+			</div>
+	</div>
+	<div class="gerardImagenFooter">
+		<img src="/css/imagenes/Varias/fondoFooter.jpg">
+	</div>
+	<div class="gerardCopyrigth">
+		<div>
+			<p>CopyRigth 
+				<span> <i class="fa-regular fa-copyright"></i></span>
+				2024
+			</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

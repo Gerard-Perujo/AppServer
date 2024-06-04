@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/footer.css">
+     <link rel="stylesheet"  href="/css/header.css">
+    <link rel="stylesheet"  href="/css/NormaEnvio.css">
+</head>
+<body>
+	<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+<header>
+	<div class="FondoHeader1">
+		<img src="/css/imagenes/Varias/fondo2.jpg">
+	</div>
+	<div class="FondoHeader2">
+		<img src="/css/imagenes/Varias/presentacion2.png">
+	</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+	<div class="gerardContenedorDeskop">
+		<div class="gerardPreHeaderDeskop">
+			<div class="gerardBenvenido">
+			<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+		</div>
+		<div class="gerardCerrarSession">
+				<span  sec:authorize="isAuthenticated()">
+					<a th:href="@{/cerrar}">Cerrar Session
+						<i class="fa-solid fa-right-from-bracket"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="gerardContenedorNavegador">
+			<div class="gerardContenedorWidth">
+				<div class="gerardNavegadorGrande">
+					<div class="gerardContenidoDesckop">
+						<div class="gerardContenedorLogo">
+							<a th:href="@{/}"><img src="/css/imagenes/Varias/logo.png"></a>
+						</div>
+						<ul>
+							<li><a th:href="@{/tienda}">Tienda</a></li>
+							<li><a th:href="@{/promociones}">Promociones</a></li>
+							<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+							<li><a th:href="@{/contacto}">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gerardNavegadorPequeño">
+					<div class="gerardContNavBotones">
+						<a th:href="@{/signup}">
+						<button id="pulsar2" class="gerardRegistro" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user-plus"></i>
+						</button></a>
+						<a th:href="@{/login}">
+						<button id="pulsar3" class="gerardLogin" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user"></i>
+						</button></a>
+						<a th:href="@{/carro}">
+						<button id="pulsar1" class="gerardCesta" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-basket-shopping"></i>
+						</button></a>
+						<a th:href="@{/usuario}">
+						<button id="pulsar4" class="MiUsuario" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-house-user"></i>
+						</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gerardContenedorMobil">
+		<div id="fondoNegro"></div>
+		<div class="gerardContenedorLogoMobil">
+			<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+			<div class="gerardMenuMobilActivo">
+				<div id="btnCerrarMovil" class="gerardCerrarMobil">
+					<button>.</button>
+				</div>
+				<div class="gerardContenedorLogoActivo">
+					<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+				</div>
+				<div class="gerardContenedorOpciones">
+				<div class="UsuarioMovil">
+				<span>Benvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+				</div>
+					<ul class="gerardlistaOpciones">
+						<li><p>Mi Usuario</p>
+							<ol class="gerardOpcinesUsuario" sec:authorize="isAuthenticated()">
+								<li><a th:href="@{/usuario}">Datos Personales</a></li>
+								<li><a th:href="@{/pedidos}">Mis Pedidos</a></li>
+								<li><a th:href="@{/favoritos}">Productos Favoritos</a></li>
+								<li><a th:href="@{/direcciones}">Direcciones</a></li>
+								<li><a th:href="@{/pagos}">Metodos de Pago</a></li>
+								<li><a th:href="@{/club}">Peco Club</a></li>
+								<li><a th:href="@{/comentario}">Mis Comentarios</a></li>
+							</ol>
+						</li>
+						<li><p>Tienda</p>
+							<ul class="gerardOpcionesTienda">
+								<li><a th:href="@{/frutas}">Frutas</a></li>
+								<li><a th:href="@{/verduras}">Verduras</a></li>
+								<li><a th:href="@{/productos}">Productos Varios</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/promociones}">Promociones</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contacto</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Session</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/signup}">Registrar</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/cerrar}">Cerrar Session</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="gerardCestaHamburgesa">
+			<div class="gerardCestaMobil">
+				<a th:href="@{/carro}" sec:authorize="isAuthenticated()"><i class="fa-solid fa-basket-shopping"></i></a>
+			</div>
+			<div class="gerardContenedorbtnHamburgesa">
+				<button id="btnMovil" class="btnHamburgesa">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+    <div class="gerardContenedorNormas">
+        <div class="NormasTitulo">
+            <h2>Política y <span>Privacidad</span></h2>
+        </div>
+        <div class="ContenidoNormas">
+            <p>
+				Esta política de privacidad contiene toda la información necesaria que debe proporcionarse a los Usuarios al momento de recoger sus datos personales a través de cualquiera de los formularios del sitio web, como aquella relacionada con las finalidades, plazos de conservación y base jurídica en la cual se legitima el tratamiento, cómo se utilizan, comunican y los derechos de los Usuarios.
+				Estas políticas se han elaborado conforme al Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, y a la normativa vigente de protección de datos en España.
+				Responsable del tratamiento de datos personales
+				Disfrutismo, S.L. (Disfrutaverdura) es responsable de la recogida y el uso de sus datos personales según lo indicado en la presente política de privacidad. Nuestra sede central está en la C/ Tuset 10, 2º 4ª 08006 Barcelona, España, con CIF B-63504575.
+				Principios aplicados para el tratamiento de datos personales
+				Los principios indicados a continuación son aplicados por Disfrutaverdura y por cualquier persona de su plantilla que tenga acceso a datos. Los datos de carácter personal serán siempre:
+				tratados de manera lícita, leal y transparente.
+				recogidos con fines determinados, explícitos y legítimos, y no serán tratados ulteriormente de manera incompatible con dichos fines.
+				adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados.
+				exactos y, si fuera necesario, actualizados, adoptándose todas las medidas razonables para que se supriman o rectifiquen aquellos que sean inexactos con respecto a los fines para los que se tratan.
+				conservados durante no más tiempo del necesario para los fines del tratamiento.
+				tratados con integridad y confidencialidad, de modo tal que se garantice una seguridad adecuada de aquellos.
+				Tipos de datos personales tratados y finalidad
+				Los datos personales que se proporcionen deberán ser verdaderos, exactos y completos y mantenerse actualizados. El registro de datos mediante la utilización del formulario es obligatorio, al menos aquellos marcados como tales, e implicará que ha sido informado y que ha prestado su consentimiento al contenido de la presente política de privacidad. La falta de aportación de estos, o el suministro de datos incorrectos, imposibilitará que podamos gestionar correctamente las solicitudes efectuadas.
+				En nuestro sitio web recogemos las siguientes categorías de datos personales:
+				Información relacionada con suscripciones a boletines informativos y prospección comercial, como nombre, apellidos, correo electrónico, teléfono, idioma y país. Estos datos personales se almacenan en nuestras bases de datos para la gestión de las relaciones comerciales, y se usarán para el envío de boletines informativos sobre Disfrutaverdura, sus servicios y productos relevantes para sus intereses.
+				Siempre se proporcionará la opción de cancelar y/o eliminarse de las bases de datos con cada comunicación electrónica que reciba de nosotros. En cualquier momento puede modificar su información o preferencias o proporcionar detalles adicionales.
+				 
+				Información relacionada con solicitudes para la prestación de nuestros servicios y contratación de nuestros productos, como nombre, apellidos, empresa, domicilio, correo electrónico, teléfono y dirección postal. Estos datos personales se almacenan en nuestras bases de datos para la gestión de las relaciones comerciales y se usarán para completar cualquier solicitud electrónica de servicios y productos a través de nuestro sitio web. En cualquier momento puede modificar su información o preferencias o proporcionar detalles adicionales.
+				No utilizaremos sus datos personales para tomar decisiones automatizadas que afecten o creen perfiles distintos de los descritos anteriormente. En cualquier caso, si existiera un tratamiento posterior de los datos cuya finalidad sea distinta a aquella para la cual inicialmente se recogieron le informaremos sobre todos los aspectos relevantes a este otro fin antes de proceder a dicho tratamiento ulterior.
+				Tiempo de conservación de los datos personales
+				Los datos personales de los Usuarios serán tratados mientras dure la ejecución del contrato o solicitudes de información y, en cualquier caso, durante el plazo de tiempo necesario para cumplir con la finalidad para la que se recabaron y para determinar las posibles responsabilidades que se pudieran derivar de dicha finalidad y del tratamiento de los datos. Cuando los datos deban conservarse cumpliendo plazos de prescripción indicados en la normativa aplicable, serán bloqueados y puestos únicamente a disposición de las autoridades competentes, y serán eliminados una vez finalizado dicho plazo. En el caso de comunicaciones comerciales, los datos serán conservados mientras usted no se oponga a recibir dicha información.
+				Para determinar el período de conservación apropiado para los datos personales, también nos basamos en la cantidad, tipo y sensibilidad de los datos personales, el riesgo potencial de daño por el uso no autorizado o la divulgación de sus datos personales, los fines para los cuales procesamos sus datos personales y los requisitos legales que apliquen.
+				Legitimación para tratar datos personales
+				Las siguientes bases jurídicas de legitimación aplican para tratar sus datos personales:
+				Consentimiento: para aquellos datos relativos a solicitudes de suscripción a boletines y prospección comercial.
+				Interés legítimo: para aquellos datos relativos a solicitudes de información o servicios, que hacen que el tratamiento sea necesario para desarrollar nuestra actividad comercial, siempre que dichos intereses no estén por encima de sus intereses o derechos y libertades fundamentales. Nuestro interés legítimo consiste en poder garantizar la continuidad de negocio, estableciendo canales de contacto que nos permitan ofrecer nuestros servicios y comprender las necesidades y expectativas del mercado, además de mejorar el nivel de satisfacción de los Usuarios y, por lo tanto, mejorar nuestra oferta de servicios y marcas.
+				Ejecución del contrato: para aquellos datos de identificación y contacto que permiten gestionar el contrato a distancia para la provisión de servicios y productos ofertados en nuestra web.
+				Destinatarios de los datos personales
+				Los datos personales del Usuario podrán ser cedidos/comunicados a los siguientes destinatarios:
+				Empresas encargadas del tratamiento de datos, como proveedores que prestan servicios a Disfrutaverdura, como puede ser la gestión de campañas de promoción, gestores de contenido y relación con clientes. Los proveedores de servicios están autorizados a utilizar la información sólo en la medida en que sea necesario para realizar y prestar los servicios para los que fueron contratados y con sujeción a los términos establecidos en los contratos de encargo de tratamiento celebrados y en esta Política de Privacidad.
+				Administraciones y Organismos Públicos cuando así lo exija la normativa fiscal, laboral o cualquier otra aplicable.
+				También pueden producirse transferencias internacionales de datos a razón de las anteriores cesiones/comunicaciones en el supuesto que las empresas destinatarias se encuentren fuera del Espacio Económico Europeo, para las cuales Disfrutaverdura utilizará las cláusulas contractuales tipo adaptadas por la Comisión Europea y el Escudo de Privacidad UE-EE.UU, como garantía de aquellas transferencias realizadas a países que no cuentan con una decisión de adecuación de la Comisión Europea. En todo caso, aquellos terceros con los cuales se compartan determinados datos de carácter personal habrán acreditado con carácter previo la adopción de medidas técnicas y organizativas adecuadas para la correcta protección de los mismos de acuerdo con el RGPD.
+				Nos comprometemos a nunca utilizar sus datos personales para fines distintos a los determinados en esta política de privacidad, ni cederlos de forma ilegítima a terceros.
+				Derechos de las personas
+				Los Usuarios podrán ejercer cualquiera de los derechos reconocidos en la normativa de protección de datos ante nosotros.
+				Nos comprometemos a respetar y facilitar el ejercicio de estos derechos y, en particular, de los derechos de acceso, rectificación, suspensión, oposición, limitación del tratamiento y portabilidad de los datos. Estos derechos podrán ser ejercidos mediante el envío un correo electrónico a info@disfrutaverdura.com , junto con una copia de su documento de identificación válido.
+				Le facilitaremos toda la información necesaria relativa a las actuaciones que realicemos sobre la base de cualquier solicitud de ejercicio de los derechos que como interesado le conciernan, dentro de los plazos legales estipulados.
+				En todo caso, le informamos que puede presentar reclamación frente a la Agencia Española de Protección de Datos para la tutela de cualquiera de sus derechos.
+				Aplicación de medidas de seguridad sobre los datos personales
+				Garantizamos que mantenemos los niveles de seguridad para la protección de datos personales que nos facilita a través del sitio web conforme a la normativa vigente, y que se han establecido y aplican todas las medidas técnicas y organizativas correspondientes para evitar la pérdida, destrucción o daño accidental, mal uso, alteración y tratamiento no autorizado o ilícito de los datos facilitados por los Usuarios.
+				También hemos implantado un procedimiento de notificación en caso de que exista cualquier sospecha de violación en la seguridad de los datos personales, dirigido a los interesados y también a la autoridad de control que corresponda.
+				Derecho a retirar el consentimiento
+				Si ha prestado su consentimiento para el tratamiento de sus datos personales, tiene derecho a retirarlo total o parcialmente. Para retirar su consentimiento, siga los enlaces de exclusión indicados en todas las comunicaciones comerciales que se le envíen o póngase en contacto con nosotros mediante nuestro formulario de contacto en esta web o a través de correo electrónico.
+				Una vez que hayamos recibido la notificación de que ha retirado su consentimiento, ya no procesaremos su información para los fines a los que autorizó originalmente, a menos que existan motivos legítimos convincentes para un procesamiento posterior que anule sus intereses, derechos y libertades o para el establecimiento, ejercicio o defensa de reclamos legales. La retirada del consentimiento para recibir comunicaciones comerciales no afectará el procesamiento de los datos personales para la prestación de nuestros servicios.
+				Contacto
+				Si tiene dudas, comentarios o quejas sobre el uso de sus datos personales, contacte con nuestros servicios de atención al cliente por correo electrónico a info@disfrutaverdura.com o por los teléfonos indicados en para cada localidad en nuestra web.
+			</p>
+        </div>
+    </div>
+</section>
+<footer>
+	<div class=gerardContenedorFooter>
+		<div >
+			<ul class=gerardContendorContacto>
+				<li>Contacto:</li>
+				<li>Avenida Felipe VI 326</li>
+				<li>infoPeco@gmail.com</li>
+				<li>Telf: 615498758</li>
+			</ul>
+		</div>
+		<div >
+			<ul class=gerardContenedorLegal>
+				<li>Legal:</li>
+				<li>
+					<a th:href="@{/politica}">Política de Privacidad</a>
+				</li>
+				<li>
+					<a th:href="@{/NormaEnvio}">Normas de Envío</a>
+				</li>
+				<li>
+					<a th:href="@{/terminos}">Términos y condiciones</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="gerardImagenFooter">
+		<img src="/css/imagenes/Varias/fondoFooter.jpg">
+	</div>
+	<div class="gerardCopyrigth">
+		<div>
+			<p>CopyRigth 
+				<span> <i class="fa-regular fa-copyright"></i></span>
+				2024
+			</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

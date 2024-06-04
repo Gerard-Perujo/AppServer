@@ -1,0 +1,143 @@
+
+
+
+footer{
+	height:auto;
+	
+}
+
+.gerardImagenFooter{
+	height:203px;
+	position: sticky;
+    bottom: 0;
+
+}
+
+
+
+.gerardImagenFooter img{
+	width:100%;
+	height:100%;
+	object-fit: fill;
+
+}
+
+
+.gerardContenedorFooter{
+	max-width:1200px;
+	font-family: var(--letra-tipo-targeta);
+	line-height: var(--altura-linia-targeta);
+	font-size: var(--tamaño-letra-targeta);
+	font-weight: 700;
+	margin: 0 auto;
+	display: flex;
+	flex-direction:row;
+    justify-content: space-between;
+    color: var(--color-texto);
+	position: relative;	
+}
+
+.gerardCopyrigth{
+	height: 80px;
+	background-color:#4D5B30;
+	color:white;
+	position: sticky;
+	bottom: 0;
+}
+
+
+.gerardCopyrigth div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 2px white solid;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.gerardContenedorFooter::before{
+	content: ' ';
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-image:var(--color-hover-gradiente);
+}
+
+.gerardContendorContacto{
+	width:100%;
+	list-style:none;
+	padding:0;
+	margin: 40px 0 0 16px;
+}
+
+.gerardContenedorLegal{
+	width:100%;
+	list-style:none;
+	padding:0;
+	margin: 40px 16px 0 0;
+}
+
+
+.gerardContenedorFooter li:nth-child(1){
+	margin-bottom:24px;
+}
+
+.gerardContenedorFooter li:nth-child(2), li:nth-child(3), li:nth-child(4){
+	margin-bottom:8px;
+}
+
+
+.gerardContenedorLegal li a{
+	text-decoration:none;
+	position: relative;
+	color:var(--color-texto);
+}
+
+
+/* agrego cambio color al hacer hover encima del texto */
+.gerardContenedorLegal li:hover a{
+	background-image:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+	
+}
+
+
+/* agrego linia inferior al hacer hover en los enlaces */
+.gerardContenedorLegal li:hover a::after{
+	content: ' ';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-image:var(--color-hover-gradiente);
+
+	
+}
+
+
+
+@media(max-width:764px){
+	.gerardContenedorFooter{
+		max-width:300px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction:column;
+    	justify-content: center;
+    	align-items: flex-start;
+    	line-height: var(--altura-linia-targeta);
+		font-size: var(--tamaño-letra-targeta);
+  
+	}
+	
+	.gerardContenedorLegal{
+		margin: 40px 0 0 0;
+	}
+
+	.gerardContendorContacto{
+		margin: 40px 0 0 0;
+	}
+}

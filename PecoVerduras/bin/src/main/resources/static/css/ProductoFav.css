@@ -1,0 +1,464 @@
+/* SECCIÓN */
+section{
+	display:flex;
+	justify-content:center;
+	
+	position:relative;
+	top:-120px;
+}
+
+.noeliacontenedorPrincipal{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* CONTENEDOR CONTENIDO */
+.contenedorProdFav {
+    /*display: flex;*/
+    width: 100%; 
+    /*margin-left: 40px;*/
+    justify-content: center;
+}
+
+.contenedorProdFav ul {
+    list-style-type: none;
+}
+
+
+
+/* NAVEGADOR */
+.noeliaNavegador ul{
+	background-color:var(--color-verde-claro);
+	border-radius:8px;
+	padding:16px;
+	/*margin:16px;*/
+	margin:16px 40px 16px 16px;
+	position: sticky;
+    top: 30px;
+    box-shadow:var(--sombra-inputss);
+    width: 210px;
+}
+
+.noeliaNavegador li a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	text-decoration:none;
+	font-weight:0;
+	margin-left:8px;
+}
+
+.noeliaNavegador li i{
+	font-size: var(--tamaño-letra-targeta);
+	color:var(--color-texto);
+	width: 20px;
+    height: 20px;
+
+}
+
+.noeliaNavegador li{
+	list-style:none;
+}
+
+.noeliaNavegador li div{
+	margin-bottom:16px;
+	width:fit-content;
+    display: flex;
+	
+}
+
+.noeliaNavegador li div:hover{
+	background:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+	position:relative;
+}
+
+.noeliaNavegador li div:hover::before{
+	content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image:var(--color-hover-gradiente);
+}
+
+
+
+/* TITULO */
+.noeliaCabecera{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+
+.noeliaTitulo p {
+  text-align: left;
+}
+
+.noeliaTitulo p{
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+}
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 35px;
+}
+
+
+
+/* SCROLL */
+.scroll {
+  overflow-y: auto; /* Aplico scroll en el eje Y */
+  overflow-x: hidden; /* Oculto el scroll en el eje X */
+  height: 680px;
+  padding-right: 5px; /* Añado un pequeño espacio entre el scroll y la 'tabla' */
+  margin-right: -5px; /* Compensa el espacio añadido para evitar cambios de diseño */
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-verde-claro-transparente); /* Color del scrollbar */
+  border-radius: 4px;
+}
+
+
+/***************************************************************/
+/*SUBCONTENEDOR*/
+.MisProductos{
+	width: 100%;
+	padding: 0 16px;
+}
+
+
+
+/*SPAN*/
+span{
+	font-family: var(--letra-tipo-tituloTargeta);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+}
+
+
+/***************************************************************/
+.contenedorTarjeta {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-verde-claro-transparente);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 160px;
+    width: 100%;
+}
+
+.contenedorImagen {
+    width: 150px;
+    height: 150px;
+    border-radius: 88px;
+    background-color: var(--color-blanco-transparente);
+    margin-left: 32px;
+    overflow: hidden;
+}
+
+.contenedorImagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tarjetaInformacion {
+    flex-grow: 1;
+    padding: 10px 40px;
+    
+    
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+}
+.texto{
+	flex-direction: column;
+}
+/***************************************/
+.productoNombre, .productoPrecio {
+    display: block;
+	font-family: var(--letra-tipo-descripcion);
+    font-size: var(--tamaño-letra-descripcion);
+    line-height: var(--altura-linia-descripcion);
+    color: var(--color-texto);
+    margin-bottom: 8px;
+}
+
+.botonesAccion {
+    display: flex;
+    gap: 30px;
+    margin-top: 35px;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.verProductFav {
+    padding: 8px;
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    background: var(--color-naranga-boton);
+    border: none;
+}
+
+.verProductFav:hover {
+    background-color: var(--color-hover-boton);
+    box-shadow: var(--sombra-inputs);
+}
+
+.verProductFav a {
+    font-family: var(--letra-tipo-tituloTargeta);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************/
+.tarjetaInformacion p {
+	font-family: var(--letra-tipo-tituloTargeta);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+}
+
+.tarjetaInformacion .botonVerProducto,
+.tarjetaInformacion .botonCancelarProducto,
+.tarjetaInformacion .botonEliminarFavorito {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tarjetaInformacion .botonVerProducto {
+    background-color: #007bff;
+}
+
+.tarjetaInformacion .botonCancelarProducto {
+    background-color: #ffc107;
+}
+
+.tarjetaInformacion .botonEliminarFavorito {
+    background-color: #dc3545;
+}
+
+
+
+/***************************************************************/
+
+/* BOTONES */
+.ToSubmit{
+	background: var(--color-naranga-boton);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    width: 100%;
+    padding: 10px 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ToSubmit label{
+	position:relative;
+	z-index:1;
+}
+
+.ToSubmit a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	position:relative;
+	z-index:1;
+	text-decoration: none;
+}
+
+.ToSubmit label::before{
+	content: '';
+    position: absolute;
+    top: -20px;
+    left: 510px;
+    width: 200%;
+    height: 300%;
+    transform: skewX(25deg);
+    transition: all 1s ease 0s;
+    background-color: var(--color-hover-boton);
+    color: white;
+    z-index: -1;
+}
+
+.ToSubmit:hover label::before{
+	left: -400px;
+    top: -16px;
+    width: 850%;
+    z-index: -1;
+}
+
+
+
+/***************************************************************/
+/*PAPELERA*/
+.eliminarProductFav{
+    text-decoration: none; 
+}
+
+.botonesAccion i:hover {
+    color: #c01515; /* Color al pasar el ratón por encima */
+}
+
+.eliminarProductFav i {
+    font-size: 35px;
+}
+/**CAMBIOS BOTON PAPELERA***/
+.botonesAccion .fa-solid, .fas {
+    font-weight: 900;
+    font-size: 30px;
+    color: var(--color-naranga-boton);
+    display: flex;
+    /*z-index: 2;   
+    position: relative;*/
+}
+
+
+
+/*
+.eliminarProductFav {
+    text-decoration: none;
+    margin-top:3px;
+}
+
+.eliminarProductFav .fa-trash:hover {
+    color: red; 
+}
+
+.eliminarProductFav i {
+    font-size: 35px;
+}
+
+.eliminarProductFav .fa-trash {
+    color: #e67b09;
+}
+*/
+
+
+
+/* Estilos existentes */
+/*Media query*/
+@media(max-width:900px){
+	.noeliaNavegador{
+		display:none; 
+	}
+}
+
+
+
+@media (max-width: 764px) {
+    .contenedorTarjeta {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contenedorImagen {
+        margin: 0 auto;
+        margin-top: 16px;
+    }
+
+    .tarjetaInformacion {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .botonesAccion {
+        /*flex-direction: column;*/
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .verProductFav,
+    .eliminarProductFav {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+    
+
+/**/
+
+    .botonesAccion {
+        gap: 10px;
+        
+        flex-wrap: wrap; /* Permite que los botones se envuelvan si no caben en una sola línea */
+        justify-content: center;
+    }
+
+}
+
+
+/*
+Para hacer el contenido del <div class="contenedorTarjeta"> responsive y mover los botones debajo del texto
+cuando la pantalla tenga un ancho máximo de 764px implica ajustar la disposición de los elementos dentro de
+ .tarjetaInformacion para que se adapten adecuadamente al tamaño de la pantalla.
+La media query detecta cuando el ancho de la pantalla es de 764px o menos, y entonces realiza los siguientes ajustes:
+
+.contenedorTarjeta: Se cambia la dirección del flex a columna y la altura se ajusta automáticamente para que los elementos puedan apilarse verticalmente.
+.contenedorImagen: Se centra la imagen horizontalmente y se añade un margen superior para espaciarla del contenido de arriba.
+.tarjetaInformacion: Se ajusta para que los elementos dentro de esta clase se alineen en el centro y el texto se centre.
+.botonesAccion: Los botones se apilan horizontalmente, con un espacio de 10px entre ellos.
+Botones (.verProductFav, .eliminarProductFav): Se ajustan para que ocupen el 100% del ancho disponible y se centran.
+*/

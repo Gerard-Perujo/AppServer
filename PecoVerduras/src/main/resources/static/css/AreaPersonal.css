@@ -1,0 +1,311 @@
+/* SECCIÓN */
+section{
+	/*display:flex;
+	justify-content:center;*/
+	position:relative;
+	top:-120px;
+}
+
+
+
+/* NAVEGADOR */
+
+
+.noeliaNavegador ul{
+	background-color:var(--color-verde-claro);
+	border-radius:8px;
+	padding:16px;
+	/*margin:16px;*/
+	margin:16px 40px 16px 16px;
+	position: sticky;
+    top: 30px;
+    box-shadow:var(--sombra-inputss);
+    width: 210px;
+}
+
+.noeliaNavegador li a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+	text-decoration:none;
+	font-weight:0;
+	margin-left:8px;
+}
+
+.noeliaNavegador li i{
+	font-size: var(--tamaño-letra-targeta);
+	color:var(--color-texto);
+	width: 20px;
+    height: 20px;
+}
+
+.noeliaNavegador li{
+	list-style:none;
+}
+
+.noeliaNavegador li div{
+	margin-bottom:16px;
+	width:fit-content;
+	
+	display: flex;
+}
+
+.noeliaNavegador li div:hover{
+	background:var(--color-hover-gradiente);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip:text;
+	position:relative;
+}
+
+.noeliaNavegador li div:hover::before{
+	content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image:var(--color-hover-gradiente);
+}
+
+
+
+/*CONTENEDOR TARJETAS*/
+.contenedorPrincipal{
+	text-align:center;
+	display:flex;
+	margin: 0 auto;
+	padding: 0 16px;
+	justify-content:center;
+	max-width: 1200px;
+	flex-direction:row; 
+}
+
+
+
+/*CONTENEDOR TARJETAS*/
+.contenedorContenido{
+	display: flex;
+    justify-content: center;
+    /*margin-left: 40px;
+    margin-left: 25px;*/
+        
+    flex-wrap: wrap;
+
+    flex-direction: row;
+        column-gap: 16px;
+    row-gap: 16px;
+}
+
+
+
+/*TARJETAS*/
+/*
+.contenedorTarjeta{
+	display: flex;
+    justify-content: center;
+}
+*/
+.datos{
+	background-color: var(--color-verde-claro-transparente);
+	display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    padding: 25px 25px;
+    height:auto;
+    width: 430px;
+    border-radius:8px;
+    border: 4px solid #D4DEB8;
+
+    
+    position:relative;
+    /*box-shadow:var(--sombra-inputss);*/
+	
+}
+
+.icono {
+    font-size: 24px; 
+    /*border: 4px solid #D4DEB8;*/
+}
+
+.segundoCampo label{
+	margin: 4px;
+}
+.texto{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.segundoCampo {
+	margin-left: 25px;
+    display: flex;
+    flex-wrap: wrap; 
+					
+}
+.segundoCampoNombre{
+	margin-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align:left;
+}
+.segundoCampoNombre label{
+	margin: 4px;
+}
+
+.campoEmail{
+	text-align:left;
+}
+						
+.contenedorTarjeta label{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+}
+.contenedorTarjetaNombre label{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto);
+}
+
+.contenedorTarjetaNombre > .datos {
+	height:168.28px;
+}
+
+.tituloTar {
+    font-weight: bold;
+}
+/*
+.emailTar {
+    display: block; 
+   
+}*/
+
+/*BOTONES TARJETAS*/
+.ToSubmit{
+	padding:4px;
+	width:280px;
+	border-radius:8px;
+	background:var(--color-naranga-boton);
+	border:none;
+	margin-top: 20px;
+	margin-left: 25px;
+	
+	overflow:hidden;	
+	position: relative;
+}
+
+.ToSubmit label{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	
+	position:relative;
+	z-index:1;
+	
+}
+
+.ToSubmit a{
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-targeta);
+	line-height: var(--altura-linia-targeta);
+	color:var(--color-texto-blanco);
+	position:relative;
+	z-index:1;
+	text-decoration: none;
+
+	
+}
+.ToSubmit label::before{
+	content:'';
+	position:absolute;
+	top: -6px;
+    left: 295px;
+    width: 130%;
+	height: 170%;
+	transform: skewX(25deg);
+	transition: all 1s ease 0s;
+	background-color:var(--color-hover-boton);
+	color:white;
+	z-index:-1;
+}
+
+.ToSubmit:hover label::before{
+    left: -140px;
+    top: -6px;
+    width: 360%;
+    z-index: -1;
+}
+
+
+.segundoCampoNombre > div{
+	margin-bottom: 10px;
+	
+}
+.mensajeRespuesta{
+	width:100%;
+	text-align:center;
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-targeta);
+}
+
+.mensajeCorrecto{
+	color:green;
+}
+
+.mensajeError{
+	color:red;
+}
+
+
+
+/*Media query*/
+@media(max-width:900px){
+	.noeliaNavegador{
+		display:none; 
+	}
+}
+
+@media(max-width:664px){
+	.datos{
+		background-color: var(--color-verde-claro-transparente);
+	    display: flex;
+	    flex-direction: column;
+	    /* align-items: center; */
+	    padding: 25px 25px;
+	    height: auto;
+	    width: 100%; /*70*/
+	    border-radius: 8px;
+	    border: 4px solid #D4DEB8;
+	    position: relative;
+	    /* box-shadow: var(--sombra-inputss);*/
+	}
+
+	.contenedorTarjetaNombre{
+		width: 100%;
+	}
+	.contenedorTarjeta{
+		width: 100%;
+	}
+	
+	.segundoCampo{
+		margin-left: 25px;
+	    display: flex;
+	    flex-wrap: wrap;
+	    flex-direction:column;
+	    text-align: left;
+	}
+	
+
+	
+	.ToSubmit{
+		width:70%;
+		margin-left: 0;
+	}
+
+
+}

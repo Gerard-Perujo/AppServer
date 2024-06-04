@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/NormaEnvio.css">
+    <link rel="stylesheet"  href="/css/login.css">
+</head>
+<body>
+<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<div class="gerardContenedorLogin">
+		<div class="gerardLogin">
+			<form th:action="@{/signup}" method="post">
+				<div class="gerardTitulo">
+					<h2>Registro</h2>
+				</div>
+				<div class="gerardInput">
+					<input type="text" class="inputUser" name="username" placeholder="Username" required>
+					<input type="password" class="inputPas" name="password" placeholder="Password" required>
+					<input type="text" class="inputNombre" name="nombre" placeholder="Nombre" required>
+					<input type="email" class="inputEmail" name="email" placeholder="Email" required>
+				</div>
+				<div class=gerardEntrar>
+					<button type="submit" >
+						<p>Registro</p>
+					</button>
+				</div>
+				<div class="geardHome">
+					<a th:href="@{/}">
+						<button type="button">
+							<p>Volver Home</p>
+						</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

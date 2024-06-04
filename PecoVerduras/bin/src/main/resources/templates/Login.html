@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="/Javascript/slick.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+	<link rel="stylesheet" type="text/css" href="/css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/slick-theme.css"/>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/NormaEnvio.css">
+    <link rel="stylesheet"  href="/css/login.css">
+</head>
+<body>
+<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<div class="gerardContenedorLogin">
+		<div class="gerardLogin">
+			<form action="/login" method="post">
+				<div class="gerardTitulo">
+					<h2>Login</h2>
+				</div>
+				<div class="gerardInput">
+					<input type="text" class="inputNombre" name="username" placeholder="Username">
+					<input type="password" class="inputPas" name="password" placeholder="Password">
+				</div>
+				<div class="mensajeError">
+					<span th:if="${param.error != null}"> Usuario o Password Incorrectos</span>
+				</div>
+				<div class=gerardEntrar>
+					<button type="submit" >
+						<p>Entrar</p>
+					</button>
+				</div>
+				<div class="gerardRegistro">
+					<p>¿No eres Usuario?</p>
+					<a th:href="@{/signup}">
+						<button type="button">
+							<p>Registrate</p>
+						</button>
+					</a>
+				</div>
+				<div class="geardHome">
+					<a th:href="@{/}">
+						<button type="button">
+							<p>Volver Home</p>
+						</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

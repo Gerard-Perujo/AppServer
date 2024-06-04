@@ -1,0 +1,277 @@
+
+
+/*Aqui declaramos todas las variables que vamos a usar en el css para evitar tener que 
+ir buscando colores o fuentes de texto*/
+
+/*tipo de letra*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+
+	/* colores */
+	--color-fondo-footer: rgba(255, 224, 136, 0.6);
+	--color-fondo-body: rgba(255, 224, 136, 0.2);
+	--color-texto: #111D38;
+	--color-texto-blanco: white;
+	--color-blanco-transparente: rgba(255, 255, 255, 0.5);
+	--color-verde-oscuro: #4D5B30;
+	--color-verde-medio:#80964C;
+	--color-verde-claro:#D4DEB8;
+	--color-verde-claro-transparente: rgba(212, 222, 184, 0.6);
+	--color-verde-claro-mastransparente: rgba(212, 222, 184, 0.2);
+	--color-hover-gradiente: linear-gradient(to right, #EE972E, #80964C);
+	--color-naranga-boton: rgba(230, 123, 9, 1);
+	--color-hover-boton: #855840;
+	--sombra-inputs: 3px 3px 3px 0px rgba(0, 0, 0, 0.50);
+	
+	--sombra-inputs: 3px 3px 3px 3px rgba(0, 0, 0, 0.50);
+	--sombra-inputss: 5px 5px 20px 0px rgb(0 0 0 / 27%);
+	
+	
+	--color-error: red;
+	--color-descuento: red;
+
+
+	/* tipo de letra y tamaños */
+	--letra-tipo-targeta:"Mulish", sans-serif;
+	--altura-linia-targeta: 22.4px;
+	--tamaño-letra-targeta: 16px;
+	--letra-tipo-descripcion: "Mulish", sans-serif;
+	--altura-linia-descripcion: 33.6px;
+	--tamaño-letra-descripcion: 24px;
+	--letra-tipo-tituloTargeta: "Mulish", sans-serif;
+	--altura-linia-tituloTargeta: 33.6px;
+	--tamaño-letra-tituloTargeta: 24px;
+	--letra-tipo-tituloSecundario:"Mulish", sans-serif;
+	--altura-linia-tituloSecundario: 67.2px;
+	--tamaño-letra-tituloSecundario: 48px;
+	--letra-tipo-tituloPrincipal: "Rancho", cursive;
+	--altura-linia-tituloPrincipal: 89.6px;
+	--tamaño-letra-tituloPrincipal: 64px;
+	--letra-tipo-tituloMobil: "Rancho", cursive;
+	--altura-linia-tituloMobil: 33.6px;
+	--tamaño-letra-tituloMobil: 24px;
+	
+	
+ }
+
+
+
+  .preloader{
+	position: fixed;
+	width: 100%;
+	background-color: white;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	transition: all 4s cubic-bezier(.645,.045,.355,1);
+ } 
+
+ body{
+	border-radius: 10px;
+	margin: 0;
+	/* transition: all 3s cubic-bezier(.645,.045,.355,1); */
+ }
+
+
+
+ /* CSS  del preloader */
+ .lds-roller {
+	/* change color here */
+	color: #498e09
+  }
+  .lds-roller,
+  .lds-roller div,
+  .lds-roller div:after {
+	box-sizing: border-box;
+  }
+  .lds-roller {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+  }
+  .lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 7.2px;
+	height: 7.2px;
+	border-radius: 50%;
+	background: currentColor;
+	margin: -3.6px 0 0 -3.6px;
+  }
+  .lds-roller div:nth-child(1) {
+	animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+	top: 62.62742px;
+	left: 62.62742px;
+  }
+  .lds-roller div:nth-child(2) {
+	animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+	top: 67.71281px;
+	left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+	animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+	top: 70.90963px;
+	left: 48.28221px;
+  }
+  .lds-roller div:nth-child(4) {
+	animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+	top: 72px;
+	left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+	animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+	top: 70.90963px;
+	left: 31.71779px;
+  }
+  .lds-roller div:nth-child(6) {
+	animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+	top: 67.71281px;
+	left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+	animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+	top: 62.62742px;
+	left: 17.37258px;
+  }
+  .lds-roller div:nth-child(8) {
+	animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+	top: 56px;
+	left: 12.28719px;
+  }
+  @keyframes lds-roller {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+
+
+  /* CSS del cursor */
+
+  *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*font-family: "Poppins", sans-serif;*/
+  }
+
+
+  .cursor{
+	z-index: 999;
+	position: absolute;
+	background:#80964C;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	box-shadow: 0 0 20px #80964C,
+				0 0 60px #80964C,
+				0 0 100px #80964C;
+	animation: color 5s infinite;
+  }
+
+  @keyframes color{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	100%{
+		filter: hue-rotate(360deg)
+	}
+  }
+
+  .cursor::before{
+	content: '';
+	position: absolute;
+	background: #80964C;
+	width: 50px;
+	height: 50px;
+	opacity: 0.1;
+	transform: translate(-25%, -25%);
+	border-radius: 50%;
+  }
+  
+  
+  
+  
+  
+  /*Agrego el efecto burbujas de fondo*/
+   .contenedorBurbujas{
+	position: relative;
+	width: 100%;
+	height: 2000%;
+	z-index: -3;
+	
+  }
+
+  .burgujas{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	
+  }
+
+
+  .burgujas span{
+	z-index: -3;
+	position: relative;
+	width: 5px;
+	height: 5px;
+	background: #4D5B30;
+	margin: 0 4px;
+	border-radius: 50%;
+	/*box-shadow: 0 0 0 10px #4fc3dc44,
+	0 0 50px  #4D5B30,
+	0 0 100px  #4D5B30;*/
+	animation: animate 15s linear infinite;
+	animation-duration: calc(125s/ var(--i));
+  }
+
+
+  @keyframes animate {
+	0%{
+		transform: translateY(100vh) scale(0);
+	}
+	100%{
+		transform: translateY(-10vh) scale(1);
+	}
+  }
+
+
+  .burgujas span:nth-child(even){
+	background: #80964C;
+	/*box-shadow: 0 0 0 10px #4fc3dc44,
+	0 0 50px  #80964C,
+	0 0 100px  #80964C;*/
+  }
+  

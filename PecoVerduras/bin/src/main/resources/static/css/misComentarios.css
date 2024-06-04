@@ -1,0 +1,183 @@
+
+
+.contenedorPrincipalComentarios{
+	max-width: 1200px;
+    padding: 0 16px 0 16px;
+    margin: 0 auto;
+}
+
+.subContenedorPrincipal{
+	display: flex;
+    justify-content: space-between;
+}
+
+.contenedorComentariosNoelia{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contenedorTextoComentarios{
+	font-family:var(--letra-tipo-targeta);
+	font-size:var(--tamaño-letra-targeta);
+	line-height:var(--altura-linia-targeta);
+	color:var(--color-texto);
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    width: 80%;
+}
+.tituloProducto{
+	font-weight:800;
+}
+
+
+
+
+
+/*TITULO*/
+/*
+.tituloContenedor{
+	text-align:left;
+	border-bottom:2px black solid;
+	margin-bottom:32px;
+}
+.tituloContenedor label{
+	font-family:var(--letra-tipo-targeta);
+	font-size:var(--tamaño-letra-descripcion);
+	line-height:var(--altura-linia-descripcion);
+	color:var(--color-texto);	
+}
+*/
+.noeliaTitulo{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+.noeliaTitulo p{
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-descripcion);
+	text-align: left;
+}
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 35px;
+}
+
+
+.textoComentario{
+	overflow:hidden;
+}
+
+.fechaComentario{
+	text-align:right;
+}
+
+.valoracion{
+	text-align:right;
+	font-weight:800;
+}
+
+.tarjetasComentariosNoelia{
+	width:45%;
+	/*box-shadow:var(--sombra-inputs);*/
+	border: 3px solid #D4DEB8;
+	border-radius:30px;
+	margin:16px;
+	padding:16px;
+	display:flex;
+	flex-direction:row;
+	position:relative;
+    overflow: hidden;
+}
+
+.contenedorImagen{
+	height:200px;
+	 width: 50%;
+}
+
+.contenedorImagen img{
+	height:100%;
+	width:100%;
+	object-fit:contain;
+}
+
+
+.tarjetasComentariosNoelia:before {
+    content: '';
+    width: 100%;
+
+    background-size: cover;
+
+    height: 110%;
+    top: -20px;
+    z-index: -1;
+    position: absolute;
+    background-image: url(/css/imagenes/Varias/fondoTarjeta.png);
+}
+
+.mensajeComentario{
+	display: flex;
+    background: var(--color-verde-claro-transparente); 
+    flex-direction: column;
+    padding: 32px 132px;
+    border-radius: 63px;
+}
+
+.mensajeComentario label{
+	font-family:var(--letra-tipo-targeta);
+	font-size:var(--tamaño-letra-targeta);
+	line-height:var(--altura-linia-targeta);
+	color:var(--color-texto);
+}
+
+.mensajeComentario i{
+	font-size:64px;
+	color:var(--color-texto);
+}
+
+.valoracion{
+	display:flex;
+	gap:8px;
+	flex-direction: row-reverse;
+}
+
+.fechaComentario{
+	margin-top:5px;
+}
+
+@media(max-width:900px){
+	.noeliaNavegador{
+		display:none;
+	}
+}
+
+@media(max-width:960px){
+.tarjetasComentariosNoelia {
+    width: 70%;
+}
+}
+
+
+@media(max-width:764px){
+	.tarjetasComentariosNoelia{
+		width:100%;
+	} 
+	
+	.mensajeComentario{
+    padding: 32px 30px;
+	}
+}
+
+
+
+

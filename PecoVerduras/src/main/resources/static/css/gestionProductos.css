@@ -1,0 +1,205 @@
+.contenedorDirecciones{
+	width:100%;
+}
+
+.noeliaNavegador{
+	padding-right:32px;
+}
+
+.mensajeRespuesta{
+	width:100%;
+	text-align:center;
+	font-family: var(--letra-tipo-tituloTargeta);
+	font-size: var(--tamaño-letra-descripcion);
+	line-height: var(--altura-linia-targeta);
+}
+
+.mensajeCorrecto{
+	color:green;
+	position: relative;
+    top: -16px;
+    left: 0;
+}
+
+.mensajeError{
+	color:red;
+}
+
+.tablaProductos{
+	display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom:24px;
+}
+
+.tablaTitulo{
+	font-weight:800;
+}
+
+.listaProductosCompra{
+	    display: flex;
+    flex-direction: column;
+    border-bottom: 2px black solid;
+    padding: 16px 0 16px 0;
+}
+
+.grupo1{
+	display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+        font-family: var(--letra-tipo-descripcion);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto);
+}
+.nombreProducto{
+	display:flex;
+	flex-direction:column;
+}
+
+.cantiadProducto{
+	display:flex;
+	flex-direction:column;
+}
+
+.precioCompraProducto{
+	display:flex;
+	flex-direction:column;
+}
+.grupo4{
+	font-family: var(--letra-tipo-descripcion);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto);
+	display: flex!important;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.grupo4>div{
+	display: flex;
+    flex-direction: column;
+}
+
+.grupo2{
+	    font-family: var(--letra-tipo-descripcion);
+    font-size: var(--tamaño-letra-targeta);
+    line-height: var(--altura-linia-targeta);
+    color: var(--color-texto);
+	    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.tablaopciones{
+	width:100%;
+}
+.grupo3{
+	    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+/* TITULO */
+.noeliaTitulo{
+	margin-bottom:16px;
+	text-align:center;
+	width: 100%;
+}
+
+.noeliaTitulo p {
+  text-align: left;
+}
+
+.noeliaTitulo p{
+	font-family: var(--letra-tipo-tituloPrincipal);
+	font-size: var(--tamaño-letra-tituloSecundario);
+	line-height: var(--altura-linia-tituloSecundario);
+}
+
+/* LÍNEA TITULO */
+.linea{
+	height: 2px;
+	background-color:#111D38;
+	
+	
+	color:white;
+	position: sticky;
+	bottom: 0;
+	margin-bottom: 35px;
+}
+
+
+@media(max-width:764px){
+	.grupo3{
+	    flex-direction: column;
+	    row-gap: 16px;
+	    align-content: center;
+        flex-wrap: wrap;
+	    
+	}
+	
+	.tablaProductos{
+	flex-direction:column;
+	}
+	
+	.grupo1{
+		margin-bottom:8px;
+	}
+	.grupo1 div{
+		display:flex;
+		flex-direction:column;
+	}
+	
+	.grupo4{
+	margin-bottom:8px;
+	}
+	
+	.grupo2{
+		margin-bottom:8px;
+		justify-content: space-around;
+	}
+	
+	.grupo2 div{
+		display:flex;
+		flex-direction:column;
+		
+	}
+	
+	.formulariobtn:hover a::before{
+	       left: -170px;
+	    top: -2px;
+	    width: 530%;
+	    z-index: -1;
+	}
+
+	.formulariobtn a::before{
+		content:'';
+		position:absolute;
+		top: -1px;
+	    left: 275px;
+	    width: 130%;
+		height: 120%;
+		transform: skewX(25deg);
+		transition: all 1s ease 0s;
+		background-color:var(--color-hover-boton);
+		color:white;
+		z-index:-1;
+	}
+	
+	.formulariobtn{
+		padding: 0 15px 0 15px;
+		border-radius:6px;
+		color:var(--color-texto-blanco);
+		background:var(--color-naranga-boton);
+		border:none;
+		overflow:hidden;
+		text-align: center;
+		width:60%;
+
+	}
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PecoVerduras</title>
+    <script src="https://kit.fontawesome.com/dbed3c338a.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/Javascript/peco.js" ></script>
+	<script src="/Javascript/Listado.js" ></script>
+    <link rel="stylesheet"  href="/css/variables.css">
+    <link rel="stylesheet"  href="/css/footer.css">
+    <link rel="stylesheet"  href="/css/header.css">
+     <link rel="stylesheet"  href="/css/ListadoFrutas.css">
+    <link rel="stylesheet"  href="/css/promocion.css">
+</head>
+<body>
+	<div class="cursor"></div>
+	<div class="preloader" id="cargarLoad">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+<header>
+	<div class="FondoHeader1">
+		<img src="/css/imagenes/Varias/fondo2.jpg">
+	</div>
+	<div class="FondoHeader2">
+		<img src="/css/imagenes/Varias/presentacion2.png">
+	</div>
+		<div class="contenedorBurbujas">
+        			<div class="burgujas">
+						<span style="--i:11;"></span>
+						<span style="--i:12;"></span>
+						<span style="--i:24;"></span>
+						<span style="--i:10;"></span>
+						<span style="--i:14;"></span>
+						<span style="--i:23;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:16;"></span>
+						<span style="--i:19;"></span>
+						<span style="--i:20;"></span>
+						<span style="--i:22;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:18;"></span>
+						<span style="--i:21;"></span>
+						<span style="--i:15;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:26;"></span>
+						<span style="--i:17;"></span>
+						<span style="--i:13;"></span>
+						<span style="--i:28;"></span>
+					</div>
+				</div>
+	<div class="gerardContenedorDeskop">
+		<div class="gerardPreHeaderDeskop">
+			<div class="gerardBenvenido">
+			<span>Bienvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+		</div>
+		<div class="gerardCerrarSession">
+				<span  sec:authorize="isAuthenticated()">
+					<a th:href="@{/cerrar}">Cerrar Sesión
+						<i class="fa-solid fa-right-from-bracket"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+		<div class="gerardContenedorNavegador">
+			<div class="gerardContenedorWidth">
+				<div class="gerardNavegadorGrande">
+					<div class="gerardContenidoDesckop">
+						<div class="gerardContenedorLogo">
+							<a th:href="@{/}"><img src="/css/imagenes/Varias/logo.png"></a>
+						</div>
+						<ul>
+							<li><a th:href="@{/tienda}">Tienda</a></li>
+							<li><a th:href="@{/promociones}">Promociones</a></li>
+							<li><a th:href="@{/quienesSomos}">Quiénes Somos</a></li>
+							<li><a th:href="@{/contacto}">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="gerardNavegadorPequeño">
+					<div class="gerardContNavBotones">
+						<a th:href="@{/signup}">
+						<button id="pulsar2" class="gerardRegistro" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user-plus"></i>
+						</button></a>
+						<a th:href="@{/login}">
+						<button id="pulsar3" class="gerardLogin" sec:authorize="!isAuthenticated()">
+							<i class="fa-solid fa-user"></i>
+						</button></a>
+						<a th:href="@{/carro}">
+						<button id="pulsar1" class="gerardCesta" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-basket-shopping"></i>
+						</button></a>
+						<a th:href="@{/usuario}">
+						<button id="pulsar4" class="MiUsuario" sec:authorize="isAuthenticated()">
+							<i class="fa-solid fa-house-user"></i>
+						</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gerardContenedorMobil">
+		<div id="fondoNegro"></div>
+		<div class="gerardContenedorLogoMobil">
+			<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+			<div class="gerardMenuMobilActivo">
+				<div id="btnCerrarMovil" class="gerardCerrarMobil">
+					<button>.</button>
+				</div>
+				<div class="gerardContenedorLogoActivo">
+					<a th:href="@{/}">
+					<img src="/css/imagenes/Varias/logo2.png"></a>
+				</div>
+				<div class="gerardContenedorOpciones">
+				<div class="UsuarioMovil">
+				<span>Bienvenido/a: </span><span class="usuario" sec:authorize="isAuthenticated()" th:text="${session.usuario.nombre}"></span>
+      						  <span class="nuevoUsuario" sec:authorize="!isAuthenticated()"> Nuevo Usuario</span>
+				</div>
+					<ul class="gerardlistaOpciones">
+						<li sec:authorize="isAuthenticated()"><p>Mi Usuario</p>
+							<ol class="gerardOpcinesUsuario">
+								<li><a th:href="@{/usuario}">Datos Personales</a></li>
+								<li><a th:href="@{/pedidos}">Mis Pedidos</a></li>
+								<li><a th:href="@{/favoritos}">Productos Favoritos</a></li>
+								<li><a th:href="@{/direcciones}">Direcciones</a></li>
+								<li><a th:href="@{/pagos}">Métodos de Pago</a></li>
+								<li><a th:href="@{/club}">Peco Club</a></li>
+								<li><a th:href="@{/comentario}">Mis Comentarios</a></li>
+							</ol>
+						</li>
+						<li><p>Tienda</p>
+							<ul class="gerardOpcionesTienda">
+								<li><a th:href="@{/frutas}">Frutas</a></li>
+								<li><a th:href="@{/verduras}">Verduras</a></li>
+								<li><a th:href="@{/productos}">Productos Varios</a></li>
+							</ul>
+						</li>
+						<li><a th:href="@{/promociones}">Promociones</a></li>
+						<li><a th:href="@{/quienesSomos}">Quiénes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contacto</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Sesión</a></li>
+						<li sec:authorize="!isAuthenticated()"><a th:href="@{/signup}">Registrar</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/cerrar}">Cerrar Sesión</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="gerardCestaHamburgesa">
+			<div class="gerardCestaMobil">
+				<a th:href="@{/carro}" sec:authorize="isAuthenticated()"><i class="fa-solid fa-basket-shopping"></i></a>
+			</div>
+			<div class="gerardContenedorbtnHamburgesa">
+				<button id="btnMovil" class="btnHamburgesa">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+  
+	<div class=Lista>	
+	<!-- -----------------------------Titulo de la pagina----------------------------------------- -->
+  	<div class="ContenedorCabecera">
+		<div class="TituloPagina">
+   				<h2><span>Catálogo de productos variados</span></h2>
+   	</div>
+   	   <div class="mensajeRespuesta">
+	        <span th:text="${mensaje}" class="mensajeCorrecto"></span>
+			<span th:text="${mensajeError}" class="mensajeError"></span>
+		</div>	
+   				
+   	<!-- ---------------------------------Filtro-------------------------------------------------- -->			
+        <div class="FiltroCatalogo">
+        	<form>
+        		<label>Filtrar productos por:</label>
+        		<div class="SelectFiltro">
+        			<select name="tipo" >
+        				<option value=" "></option>
+        				<option value="Queso">Queso</option>
+        				<option value="Leche">Leche</option>
+        				<option value="Arroz">Arroz</option>
+        				<option value="JamonS">Jamón serrano</option>
+        				<option value="JamonY">Jamón york</option>
+        				<option value="Pasta">Pasta</option>
+        				<option value="Miel">Miel</option>
+        				<option value="Nuez">Nueces</option>
+        				<option value="Almendra">Almendras</option>
+        				<option value="Cacahuete">Cacahuetes</option>
+        			</select>
+        			<button type="submit" class="ToSubmit">
+        				<label>Filtrar</label>
+        			</button>
+        		</div>
+        	</form>
+        </div>
+	</div>
+	
+	<!-- -----------------------------Navegador izquierda----------------------------------------- -->
+   <div class=NavYTarjetas>
+   		<div class="NavegadorIzquierda">
+   			<ul>
+   				<li sec:authorize="isAuthenticated()">
+   					<div>
+   						<i class="fa-solid fa-user"></i>
+   						<a th:href="@{/usuario}">Datos Personales</a>
+   					</div>
+   				</li>
+   				<li sec:authorize="isAuthenticated()">
+   					<div>
+   						<i class="fa-solid fa-box"></i>
+   						<a th:href="@{/pedidos}">Mis Pedidos</a>
+   					</div>
+   				</li>
+   				<li>
+   					<div>
+   						<i class="fa-solid fa-apple-whole"></i>
+   						<a th:href="@{/frutas}">Frutas</a>
+   					</div>
+   				</li>
+   				<li>
+   					<div>
+   						<i class="fa-solid fa-carrot"></i>
+   						<a th:href="@{/verduras}">Verduras</a>
+   					</div>
+   				</li>
+   				<li>
+   					<div>
+   						<i class="fa-solid fa-jar"></i>
+   						<a th:href="@{/productos}">Productos Varios</a>
+   					</div>
+   				</li>
+   				<li>
+   					<div>
+   						<i class="fa-solid fa-bullhorn"></i>
+   						<a th:href="@{/promociones}">Promociones</a>
+   					</div>
+   				</li>
+   				<li sec:authorize="hasAnyRole('ROLE_ADMINISTRADOR')">
+	 				<div>
+		 				<i class="fa-solid fa-pencil"></i>
+		 				<a th:href="@{/agregar/producto}">Añadir Producto</a>
+	 				</div>
+	 			</li>
+	 			<li sec:authorize="hasAnyRole('ROLE_ADMINISTRADOR')">
+	 				<div>
+		 				<i class="fa-solid fa-book-open"></i>
+		 				<a th:href="@{/gestion/producto}">Gestión Producto</a>
+	 				</div>
+	 			</li>
+   			</ul>
+   		</div>
+   	
+   	<!-- ----------------------------Zona de tarjetas----------------------------------------- -->
+   		<div class="TarjetasGlobal">
+        	<div class="TarjetasGeneral">
+        	<div class="TodaLaTarjeta" th:each="otro : ${producto}">
+            <div class="DivTarjeta">
+                  <div class="Poblacion">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <label th:text="${otro.proveedor.poblacion}"></label>
+                </div>
+                <div class="imagenDescuento">
+                    <span class="logoDescuendo" th:text="${otro.promocion}"></span>
+                </div>
+                <div class="ImagenProducto">
+                    <a th:href="@{/productos/verUno/{id}(id=${otro.idProductos})}">
+                    <img th:src="${otro.imagen}"></a>
+                </div> 
+                <div class="NombreProducto">
+                    <label th:text="${otro.nombre}"></label>
+                </div>
+                <div class="gerardCantidadmaxima">
+        				<label>Cantidad en Tienda</label><label th:text="${otro.cantidadMaxima} +  ' unidades'"></label>
+        			</div>
+                  <div class="LineaPorcentajeDescuento">
+            		<label th:if="${otro.descuento != 0}" th:text="${otro.descuento} + '% '"></label>
+					<label th:if="${otro.descuento != 0}">descuento</label>
+				</div>
+                <div class="LineaPrecioUnitario">
+                    <label th:text="${otro.precioUnitario} + '€'"></label><label>unidad</label>
+                </div> 
+        		<div class="SelectCantidad">
+        			<form th:action="@{/compra/{id} (id=${otro.idProductos})}" method="post" sec:authorize="isAuthenticated()">
+        				<div class="CantidadesCompra">
+        					<i class="fa-solid fa-cart-shopping"></i>
+        						<select name="numero" >
+        							<option value=0></option>
+        							<option value=1>1</option>
+        							<option value=2>2</option>
+        							<option value=3>3</option>
+        							<option value=4>4</option>
+        							<option value=5>5</option>
+        							<option value=6>6</option>
+        							<option value=7>7</option>
+        							<option value=8>8</option>
+        							<option value=9>9</option>
+        							<option value=10>10</option>
+        					</select>
+        				</div>
+        				<div class=btnComprar>
+        					<button  type="submit" id="cerrarContacto" class="formulariobtn">
+        						<label>Comprar</label>
+        					</button>
+        				</div>
+        			</form>
+        			<div class="EnlacesInferiores">
+        			<form th:action="@{/anadir/{id} (id=${otro.idProductos})}" method="post">
+        				<div class="AddToFavs" sec:authorize="isAuthenticated()">
+        					<button type="submit" id="anadirProducto" class="ToSubmit">
+        						<label>¡Añadir a Favoritos!</label>
+        					</button>
+        				</div>
+        			</form>
+        		</div>
+        	</div>
+        </div>
+       </div>
+      </div>
+   </div>
+  </div>
+</div> 
+</section>
+<footer>
+	<div class=gerardContenedorFooter>
+		<div >
+			<ul class=gerardContendorContacto th:object="${empresa}">
+				<li>Contacto:</li>
+				<li>
+					<span th:text="*{calle}"></span>
+					<span th:text="*{numero}"></span>
+				</li>
+				<li th:text="*{email}"></li>
+				<li th:text="*{telefono}"></li>
+			</ul>
+			</div>
+		<div >
+			<ul class=gerardContenedorLegal >
+				<li>Legal:</li>
+				<li>
+					<a th:href="@{/politica}">Política de Privacidad</a>
+				</li>
+				<li>
+					<a th:href="@{/NormaEnvio}">Normas de Envío</a>
+				</li>
+				<li>
+					<a th:href="@{/terminos}">Términos y condiciones</a>
+				</li>
+			</ul>
+			</div>
+	</div>
+	<div class="gerardImagenFooter">
+		<img src="/css/imagenes/Varias/fondoFooter.jpg">
+	</div>
+	<div class="gerardCopyrigth">
+		<div>
+			<p>CopyRigth 
+				<span> <i class="fa-regular fa-copyright"></i></span>
+				2024
+			</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
